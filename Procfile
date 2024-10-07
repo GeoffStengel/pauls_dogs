@@ -1,1 +1,1 @@
-web: gunicorn table.wsgi:application --log-file -
+web: gunicorn pd_proj.wsgi:application --log-file -
