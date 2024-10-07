@@ -15,8 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+admin.site.site_header = "Stengel Administration"
+admin.site.site_title = "STENGEL Admin Portal"
+admin.site.index_title = "Welcome to STENGEL Research Portal"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(f'{settings.ADMIN_URL}', admin.site.urls),
+    path('', include('core.urls')),
 ]
+
+    # Serve static and media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

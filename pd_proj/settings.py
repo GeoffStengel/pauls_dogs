@@ -15,7 +15,6 @@ from dotenv import load_dotenv
 import dj_database_url
 import django_heroku
 
-
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,10 +33,8 @@ ADMIN_URL = os.environ.get('ADMIN')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+#DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Application definition
 
@@ -131,15 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 #WE ADDED THIS
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
@@ -147,5 +137,48 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'core/static'),  # Path to the static files in home
     #os.path.join(BASE_DIR, 'core/static/core/css'),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# AWS S3 Configuration for Static and Media Files
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files in S3
+        "LOCATION": "static",  # Static files will be stored under 'static/' in the S3 bucket
+    },
+} 
+
+
+# Define AWS-related settings 
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_FILE_OVERWRITE = False  # Ensures files are not overwritten if they have the same name
+AWS_DEFAULT_ACL = None         # No ACLs by default for security reasons
+AWS_QUERYSTRING_AUTH = False   # Removes complex query parameters from media URLs
+
+# Configure media URLs to point to S3
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+#Added For AWS File Storage
+
+
+# Static files also served from S3 in production
+STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Define the custom storage for media files
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 django_heroku.settings(locals())

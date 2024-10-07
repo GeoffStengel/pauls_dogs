@@ -1,0 +1,162 @@
+<!--index.html Main Home Page For Website Landing Page-->
+{% extends "core/base.html" %}
+{% load static %}
+
+
+<!--Content Block Blocks Other Content From base.html-->
+{% block content %}
+     
+    <div class="homepage_content_grid">
+        <div class="info_grid">
+            {% for item in all %}
+                <a class="adoption_discount" href="#">{{ item.sale_banner }}</a>
+            {% endfor%}
+
+                    <!--Header-Image-Banner-Start-->
+                    <div class="slideshow-container">
+                        {% for item in all %}
+                            <div class="mySlides fade">
+                                <div class="image_grid">
+                                    <img class="header_banner_image" src="{{ item.lrg_banner.url }}" alt="Puppy Banner1">
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="image_grid">
+                                    <img class="header_banner_image" src="{{ item.lrg_banner_2.url }}" alt="Puppy Banner2">
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="image_grid">
+                                    <img class="header_banner_image" src="{{ item.lrg_banner_3.url }}" alt="Puppy Banner3">
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <!--Header-Image-Banner-END-->
+
+                        <!-- Navigation-buttons-For-Image-Banner-Start-->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                        <!-- Navigation-buttons-For-Image-Banner-Start-->
+
+                    <!-- Optional: Dots for slideshow-Start-->
+                    <div style="text-align:center">
+                        {% for item in all %}
+                            <span class="dot" onclick="currentSlide({{ forloop.counter }})"></span>
+                        {% endfor %}
+                    </div>
+                    <!-- Optional: Dots for slideshow-Start-->
+                
+    <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->    
+    <div class='home_description'>
+    <div class="body_text1">    
+        {% for text_body in all %} <p>{{ text_body.body_text1 }}</p> {% endfor %}
+        <img class="body_text1_img" src="{{ all.0.body_text1_img.url }}" alt="Doggy Image">
+    </div>
+    <div class="body_text2">
+        {% for text_body in all %} <p>{{ text_body.body_text2 }}</p> {% endfor %}
+        
+            <img class="body_text2_img" src="{{ all.0.body_text2_img.url }}" alt="Doggy Image">
+         
+    </div>
+    <!--2nd-Large-Body-Of-Text-Also-Has-Image-END-->      
+ 
+</div>         
+
+    <!-- Pet-Profiles-Section-START-->
+    <div class="puppy_grid_6_img">
+        {% for pet in six_pets %}
+            <div class="puppy_item">
+                <img src="{{ pet.pet_prof_img.url }}" alt="Puppy Pic 1">
+                    <p class="pet_name">{{ pet.name }}</p>
+                    <p class="pet_title">{{ pet.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+                <!-- Pet-Profiles-Section-END-->
+
+
+    <!---How-To-Adopt-Puppy-Section-START-->
+
+    <div class="adoption-steps">
+        <h2>Three Steps to Adopting a Pet</h2>
+        <ol>
+            <li>
+                <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
+            </li>
+            <li>
+                <span>📝</span> <strong>Complete the Application:</strong> Fill out an adoption application and provide references.
+            </li>
+            <li>
+                <span>🏠</span> <strong>Welcome Your New Friend:</strong> Prepare your home and schedule a vet visit.
+            </li>
+        </ol>
+    </div>
+
+
+    <div class="how_to_adopt_puppy_grid">
+        <div>
+            <p>Hello World</p>
+            <p>Step 1 To adopt puppy</p>
+            <p><span>🐾</span> <strong>Choose Your Pet:</strong>    - Research different breeds and their needs.
+                - Visit local shelters or rescue organizations.
+                - Spend time with pets to find the right match.</p>
+        </div>
+        <div>    
+            <p>Hello World</p>
+            <p>Step 2 To adopt puppy</p>
+            - Fill out an adoption application.
+            - Provide references and necessary documentation.
+            - Attend an interview or home visit if required.
+        </div>
+        <div>    
+            <p>Hello World</p>
+            <p>Step 3 To adopt puppy</p>
+            - Prepare your home with necessary supplies (food, bed, toys).
+            - Gradually introduce your new pet to their environment.
+            - Schedule a vet visit for a health check-up and vaccinations.
+        </div> 
+    </div>
+<!---How-To-Adopt-Puppy-Section-END-->
+<!---->
+
+<!---->
+<!---SPONSOR_GRID-START-->
+
+<div class="sponsor_grid">
+    <div class="thank_U_sponsors_img">
+        <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
+    </div>
+    <div class="sponsor_logos_grid">
+        <div class="box box1">
+            <img  src="{{ all.0.sponsor_01_img.url }}">
+        </div>
+        <div class="box box2">
+            <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
+        </div>
+        <div class="box box3">
+            <img src="{{ all.0.sponsor_03_img.url }}">
+        </div>
+        <div class="box box4">    
+            <img src="{{ all.0.sponsor_04_img.url }}">
+        </div>
+        <div class="box box5">        
+            <img src="{{ all.0.sponsor_05_img.url }}">
+        </div>    
+        <div class="box box6">    
+            <img src="{{ all.0.sponsor_06_img.url }}">
+        </div>    
+        <div class="box box7">        
+            <img src="{{ all.0.sponsor_07_img.url }}">
+        </div>    
+    </div>
+</div>
+<!---SPONSOR_GRID-END-->
+<!---->
+
+    </div>         
+</div>  
+
+{% endblock content%} 
+
+ 

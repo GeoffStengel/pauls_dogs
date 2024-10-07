@@ -1,0 +1,29 @@
+<!--index.html Main Home Page For Website Landing Page-->
+{% extends "core/base.html" %}
+{% load static %}   
+  
+    {% block title %}<title> Adopt A New Friend </title>{% endblock title %}
+
+
+<!-- Pet Profiles Section -->
+
+    {% block content %}
+<div class="pets_content_grid">
+    <div class="info_grid">     
+    <h1>All Pets</h1> 
+            <!-- Pet Profiles Section -->
+            <div class="puppy_grid">
+                {% for pet in all_pets %}
+                    <div class="puppy_item">
+                        <img src="{{ pet.pet_prof_img.url }}" alt="Puppy Profile Pics">
+                            <p class="pet_name">{{ pet.name }}</p>
+                            <p class="pet_title">{{ pet.title }}</p>
+                    </div>
+                
+                {% endfor %}
+            </div>    
+    </div> 
+</div>  
+
+
+{% endblock content%} 

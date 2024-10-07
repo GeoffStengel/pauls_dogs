@@ -1,0 +1,14 @@
+<!--about.html Page For Website-->
+{% extends "core/base.html" %}
+{% block title %}<title>About Us</title>{% endblock title %}   
+    <!--Content Block Blocks Other Content From base.html-->
+
+{% block content %}
+ <h1>About Us</h1>  
+ 
+  <div class='about_body_description'>
+    <p>{{ about_page.body_text1 }}</p>
+    <p>{{ about_page.body_text2 }}</p>
+  </div>
+ 
+{% endblock content %} 

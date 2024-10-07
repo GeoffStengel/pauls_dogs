@@ -1,0 +1,69 @@
+<!--So We Can Load In Our Static Directory Which Has Our CSS-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/reset.css' %}"/>
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}"/>
+    <link rel="icon" href="{% static 'core/images/dog_emoji.png' %}">
+    {% block title %}<title>Puppy Rescue</title> {% endblock title %}
+</head>
+<body>
+ 
+<div class="container">
+    <header>
+    <!--Top Banner Flashes 3 Colors -->
+        <div class="banner" id="banner" onclick="handleClick()"></div>
+    </header>
+     
+    
+        
+    
+<nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a class="nav-buttons" href="{% url 'home-home' %}">Home</a>
+        <a class="nav-buttons" href="{% url 'home-pets' %}">Pets</a>
+        <a class="nav-buttons" href="{% url 'home-about' %}">About</a>
+        <a class="nav-buttons" href="{% url 'home-contact' %}">Contact</a>
+        <a class="nav-buttons donate_button" href="{{ homepage.donation_button }}">Donate</a>
+    </div>
+   <img id="pd_logo" src="{% static 'core/images/pd_logo_100x100.png' %}" alt="Pauls Dogs Logo">
+</nav>
+
+    {% block content %}
+    
+    {% endblock %}
+    
+    <footer>
+        <div class="footer_grid">
+            <a href="{% url 'home-home' %}">Home</a>
+            <a href="{% url 'home-pets' %}">Pets</a>
+            <a href="{% url 'home-about' %}">About</a>
+            <a class="donate_button_footer" href="{{ homepage.donation_button }}">Donate</a>
+            <a href="{% url 'home-contact' %}">Contact</a>
+            <a href="{% url 'home-terms' %}">Terms of use</a>
+            <a href="{% url 'home-privacy' %}">Privacy Policy</a>
+        </div>
+    </footer>
+</div>
+        <!--Holds Smaller Sales Banner At Top-->
+        <script src="{% static 'core/js/banner.js' %}"></script>
+        <!--Holds Image SlideShow Banner At Top-->
+        <script src="{% static 'core/js/img_banner.js' %}"></script> 
+        <!--Holds Hamburger Button-->
+        <script src="{% static 'core/js/hamburger.js' %}"></script> 
+        <!--Holds 3.12.5/dist/gsap.min.js-->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TweenMax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+        <script src="{% static 'core/js/gsap_main.js' %}"></script>
+</body>
+</html> 
