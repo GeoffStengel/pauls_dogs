@@ -144,13 +144,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STORAGES = {
     "default": {
         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Media files
+        "LOCATION": "media",  # Media folder in S3 bucket
     },
     "staticfiles": {
         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files
-        "LOCATION": "static",
+        "LOCATION": "static",  # Static folder in S3 bucket
     },
 }
-
 
 # Define AWS-related settings 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  

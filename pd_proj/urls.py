@@ -20,9 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-admin.site.site_header = "Stengel Administration"
-admin.site.site_title = "STENGEL Admin Portal"
-admin.site.index_title = "Welcome to STENGEL Research Portal"
+admin.site.site_header = "Paul's Dogs Administration"
+admin.site.site_title = "PAULS DOGS Admin Portal"
+admin.site.index_title = "Welcome to Pauls Dogs Research Portal"
 
 urlpatterns = [
     path(f'{settings.ADMIN_URL}', admin.site.urls),
