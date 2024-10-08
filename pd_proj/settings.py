@@ -162,7 +162,7 @@ AWS_DEFAULT_ACL = None         # No ACLs by default for security reasons
 AWS_QUERYSTRING_AUTH = False   # Removes complex query parameters from media URLs
 
 # Configure media URLs to point to S3
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+#MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
 #Added For AWS File Storage
 
 
