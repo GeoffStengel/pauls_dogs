@@ -143,13 +143,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # AWS S3 Configuration for Static and Media Files
 STORAGES = {
     "default": {
-        "BACKEND": "storages.backends.s3.S3Storage",
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Media files
     },
     "staticfiles": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files in S3
-        "LOCATION": "static",  # Static files will be stored under 'static/' in the S3 bucket
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files
+        "LOCATION": "static",
     },
-} 
+}
 
 
 # Define AWS-related settings 
