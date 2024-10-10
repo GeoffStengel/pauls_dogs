@@ -4,7 +4,7 @@ from django.db import models
 
 class HomePage(models.Model):
     sale_banner = models.CharField(max_length=100)
-    donation_button = models.URLField(max_length=200, default='https://example.com/donate')
+    donation_button = models.URLField(max_length=200, default='https://square.link/u/y3l6efc0')
     body_text1 = models.CharField(max_length=100)
     body_text2 = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
