@@ -7,3 +7,5 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
     "It changes sometimes am renting a single server so i switch projects if u notice that"
 
 💡 Steps On How To Get Around Folders Will Update
+
+🛠️ Working Out Of Folder pd_proj

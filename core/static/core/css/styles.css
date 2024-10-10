@@ -8,7 +8,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #f9f9f9;
-    --accent-color: rgb(76, 245, 38);
+    --accent-color: red; 
     --bkgd-color: #ffffff;
     --card-bkgd: #f9f9f9;
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -72,8 +72,8 @@ nav {
 .container{
     display: grid;
    /*** width: 100%; ***/
-   max-width: 1500px; /* Set max-width to desired value */
-   width: 100%;       /* Allow it to take full width up to max-width */
+    max-width: 1500px; /* Set max-width to desired value */
+    width: 100%;       /* Allow it to take full width up to max-width */
     height:100%;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 80px auto auto auto auto;
@@ -741,7 +741,6 @@ nav {
     grid-gap: 2%; /**Space In Between The Columns & Rows**/
     padding: 40px; /* Space inside the container */
  }
-
 }
 
 @media (max-width: 650px) {
@@ -749,7 +748,6 @@ nav {
     grid-gap: 10px; /**Space In Between The Columns & Rows**/
     padding: 0; /* Space inside the container */
     width: 100%;
- 
 } 
 /*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
 .home_description img {

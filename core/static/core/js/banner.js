@@ -1,7 +1,7 @@
 const banners = [
     { text: "Adopt a Pet Today!", color: "#007bff", link: "https://example.com/adopt" },
     { text: "Special Adoption Discounts!", color: "#28a745", link: "https://example.com/discounts" },
-    { text: "Find Your Perfect Companion!", color: "#dc3545", link: "https://example.com/find" },
+    { text: "Find Your Perfect Companion!", color: "var(--accent-color)", link: "https://example.com/find" },
     { text: "Support Local Shelters!", color: "#ffc107", link: "https://example.com/support" },
 ];
 

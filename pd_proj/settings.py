@@ -16,6 +16,7 @@ import dj_database_url
 import django_heroku
 
 load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,11 +30,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ADMIN_URL = os.environ.get('ADMIN')
 #We Added This For Your .env Files To Stay Secure
-#ALLOWED_HOSTS = []
+
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Application definition
@@ -93,8 +94,7 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+#Password Validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -116,29 +116,46 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
+# Environment-based Static/Media File Handling
+ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
+if ENVIRONMENT == 'development':
+    # Development settings for static and media files
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'static/'
-#WE ADDED THIS
+elif ENVIRONMENT == 'production':
+    # Use S3 in production
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_FILE_OVERWRITE = False  # Prevent file overwrites
+    AWS_DEFAULT_ACL = None         # No ACLs for security
+    AWS_QUERYSTRING_AUTH = False   # Simplify URLs
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # Set up static and media URLs for AWS S3
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
+    # AWS S3 storage for static and media files
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Default Primary Key Field Type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Static files configuration for development
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'core/static'),  # Path to the static files in home
-    #os.path.join(BASE_DIR, 'core/static/core/css'),
+    os.path.join(BASE_DIR, 'core/static'),  # Path to static files in home
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # AWS S3 Configuration for Static and Media Files
 STORAGES = {
@@ -152,33 +169,8 @@ STORAGES = {
     },
 }
 
-# Define AWS-related settings 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-AWS_S3_FILE_OVERWRITE = False  # Ensures files are not overwritten if they have the same name
-
-AWS_DEFAULT_ACL = None         # No ACLs by default for security reasons
-AWS_QUERYSTRING_AUTH = False   # Removes complex query parameters from media URLs
+# AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
-# Configure media URLs to point to S3
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
-#Added For AWS File Storage
 
-# Static files also served from S3 in production
-STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-# Define the custom storage for media files
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
+# Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
