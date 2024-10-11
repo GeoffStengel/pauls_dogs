@@ -8,7 +8,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #f9f9f9;
-    --accent-color: red; 
+    --accent-color: rgb(238, 28, 175); 
     --bkgd-color: #ffffff;
     --card-bkgd: #f9f9f9;
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);

@@ -34,11 +34,9 @@ ADMIN_URL = os.environ.get('ADMIN')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Application definition
-
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'django.contrib.admin',
@@ -80,22 +78,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pd_proj.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
 #Password Validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -127,10 +115,10 @@ if ENVIRONMENT == 'development':
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
         os.path.join(BASE_DIR, 'core/static'),
-        ]
-    MEDIA_URL = '/media/'
+    ]
+    
+    MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -155,32 +143,23 @@ elif ENVIRONMENT == 'production':
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Static files configuration for development
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'core/static'),  # Path to static files in home
-#]
 
+#if ENVIRONMENT == 'production':
 # AWS S3 Configuration for Static and Media Files
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Media files
-        "LOCATION": "media",  # Media folder in S3 bucket
-    },
-    "staticfiles": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files
-        "LOCATION": "static",  # Static folder in S3 bucket
-    },
-}
+#    STORAGES = {
+#    "default": {
+#        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Media files
+#        "LOCATION": "media",  # Media folder in S3 bucket
+#    },
+#    "staticfiles": {
+#        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files
+#        "LOCATION": "static",  # Static folder in S3 bucket
+#    },
+#}
 
 # AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
-if ENVIRONMENT == 'production':
-    print(f'AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}')
-    print(f'AWS_ACCESS_KEY_ID: {AWS_ACCESS_KEY_ID}')
-    print(f'AWS_SECRET_ACCESS_KEY: {AWS_SECRET_ACCESS_KEY}')
-else:
-    print("Running in development mode, AWS settings not defined.")
 
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())

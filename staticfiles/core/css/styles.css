@@ -1,20 +1,20 @@
-/***CSS For Main base.html Page***/
+/***CSS For Main base.html Page Pauls Dogs***/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
-    }
-    :root {
-        --primary-color: #003366;
-        --secondary-color: #f9f9f9;
-        --accent-color: red;
-        --bkgd-color: #ffffff;
-        --card-bkgd: #f9f9f9;
-        --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
-        --text-1: #eaf9fa;
-        --text-2: #555555;
-    }  
+}
+:root {
+    --primary-color: #003366;
+    --secondary-color: #f9f9f9;
+    --accent-color: rgb(238, 28, 175); 
+    --bkgd-color: #ffffff;
+    --card-bkgd: #f9f9f9;
+    --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --text-1: #eaf9fa;
+    --text-2: #555555;
+}  
 
 /***Body Of The Website***/
 body{
@@ -67,12 +67,13 @@ nav {
     cursor: pointer; /* Change cursor to indicate clickability */
 }
 /***AD*BANNER*AT*TOP*OF*SITE*END***/ 
+
 /***Container Wraps Block Content And Is A Main Grid For Project***/
 .container{
     display: grid;
    /*** width: 100%; ***/
-   max-width: 1500px; /* Set max-width to desired value */
-   width: 100%;       /* Allow it to take full width up to max-width */
+    max-width: 1500px; /* Set max-width to desired value */
+    width: 100%;       /* Allow it to take full width up to max-width */
     height:100%;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 80px auto auto auto auto;
@@ -81,6 +82,7 @@ nav {
     margin: 0 auto;
     background: #eff0f1dd;
 }
+
 /***Nav Buttons At Top Of Website***/
 .nav-buttons {
     display: grid;
@@ -111,14 +113,16 @@ nav {
 .donate_button{
     height: 100%;
     border-radius: 10px;
-    background: red;
+    background: var(--accent-color);
 }
+
 .donate_button_footer a{
-color: red;
+color: var(--accent-color);
 }
+
 .donate_button_footer{
-    color: red;
-    }
+    color: var(--accent-color);
+}
 /***NAVE*BAR*ENDS***/
 
     
@@ -134,7 +138,6 @@ h1, h2, h3 {
 }
 
 
-    
 /***INDEX.HTML*STYLING*START****/
 /***Grid On Home Page Hold main content***/
 .homepage_content_grid{
@@ -168,22 +171,6 @@ h1, h2, h3 {
 }
 
 /**To The Actual Image Elements Of The Img Tag**/
- /*
-.header_banner_image{
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 5px;
-    overflow: hidden;
-    border-radius: 10px;
-} 
-   
-.header_banner_image {
-    width: 100%;
-    height: auto; 
-    max-height: 400px; 
-    object-fit: cover;
-}*/
 .header_banner_image {
     width: 100%;             /* Full width of the container */
     height: auto;           /* Maintain aspect ratio */
@@ -308,7 +295,7 @@ h1, h2, h3 {
 }
 
 .adoption_discount{
-    color: red;
+    color: var(--accent-color);
     margin: 0 auto;
     font-size: 16px;
     margin-top: 20px;
@@ -647,7 +634,7 @@ nav {
 }
 
 .bar1 {
-    background: #ff3d00; /* Orange */
+    background: var(--accent-color); /* Orange */
 }
 
 .bar2 {
@@ -754,7 +741,6 @@ nav {
     grid-gap: 2%; /**Space In Between The Columns & Rows**/
     padding: 40px; /* Space inside the container */
  }
-
 }
 
 @media (max-width: 650px) {
@@ -762,7 +748,6 @@ nav {
     grid-gap: 10px; /**Space In Between The Columns & Rows**/
     padding: 0; /* Space inside the container */
     width: 100%;
- 
 } 
 /*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
 .home_description img {
