@@ -172,5 +172,13 @@ STORAGES = {
 # AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
+if ENVIRONMENT == 'production':
+    print(f'AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}')
+    print(f'AWS_ACCESS_KEY_ID: {AWS_ACCESS_KEY_ID}')
+    print(f'AWS_SECRET_ACCESS_KEY: {AWS_SECRET_ACCESS_KEY}')
+else:
+    print("Running in development mode, AWS settings not defined.")
+
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
+
