@@ -126,7 +126,10 @@ ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
 if ENVIRONMENT == 'development':
     # Development settings for static and media files
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'core/static'),
+        ]
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -153,9 +156,9 @@ elif ENVIRONMENT == 'production':
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files configuration for development
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'core/static'),  # Path to static files in home
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'core/static'),  # Path to static files in home
+#]
 
 # AWS S3 Configuration for Static and Media Files
 STORAGES = {
