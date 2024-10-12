@@ -34,7 +34,7 @@ ADMIN_URL = os.environ.get('ADMIN')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+#DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Application definition
 INSTALLED_APPS = [
@@ -120,9 +120,11 @@ if ENVIRONMENT == 'development':
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    DEBUG = os.environ.get('DEBUG', 'True') == 'True'
     print('dohick')
 elif ENVIRONMENT == 'production':
     # Use S3 in production
+    DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
@@ -138,6 +140,7 @@ elif ENVIRONMENT == 'production':
     # AWS S3 storage for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
     print('hickleberry')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

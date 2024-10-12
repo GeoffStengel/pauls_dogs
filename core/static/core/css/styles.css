@@ -587,6 +587,49 @@ h1, h2, h3 {
 /***FOOTER*SECTION*END**In Base.html***/
 /************************/
 
+
+/*Contact Page START*/
+/************************/
+.contact-info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.contact-details p, .contact-hours p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.contact-details p strong, .contact-hours p strong {
+    color: #000;
+}
+
+.contact-hours {
+    margin-top: 30px;
+}
+
+.contact-info-container p {
+    line-height: 1.6;
+}
+
+
+/*Contact Page END*/
+/************************/
+
+
+
 @keyframes appear{
     from{
         opacity: 0;
@@ -780,6 +823,17 @@ nav {
     margin: 0;
  }
 }
+
+@media (max-width: 600px) {
+    .contact-info-container {
+        padding: 10px;
+    }
+
+    .contact-details p, .contact-hours p {
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 568px) {
 .adoption-steps{
     padding: 5px;
