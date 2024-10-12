@@ -117,8 +117,7 @@ if ENVIRONMENT == 'development':
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'core/static'),
     ]
-    
-    MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+    MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
