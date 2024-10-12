@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'core/css/reset.css' %}"/>
     <link rel="stylesheet" href="{% static 'core/css/styles.css' %}"/>
-    <link rel="icon" href="{% static 'core/images/dog_emoji.png' %}">
+    <link rel="icon" href="{% static 'core/images/pd_logo_02.svg' %}">
     {% block title %}<title>🐶 Pauls Dogs | Puppy Rescue 🐶</title> {% endblock title %}
 </head>
 <body>
@@ -31,7 +31,7 @@
         <a class="nav-buttons" href="{% url 'home-contact' %}">Contact</a>
         <a class="nav-buttons donate_button" href="{{ homepage.donation_button }}">Donate</a>
     </div>
-   <img id="pd_logo" src="{% static 'core/images/pd_logo_100x100.png' %}" alt="Pauls Dogs Logo">
+   <img id="pd_logo" src="{% static 'core/images/pd_logo_02.svg' %}" alt="Pauls Dogs Logo">
 </nav>
 
     {% block content %}

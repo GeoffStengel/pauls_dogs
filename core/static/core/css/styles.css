@@ -15,7 +15,7 @@
     --text-1: #eaf9fa;
     --text-2: #555555;
 }  
-
+/* nice pink rgb(238, 28, 175)
 /***Body Of The Website***/
 body{
     background: var(--bkgd-color);
@@ -44,12 +44,14 @@ nav {
 }
  
 #pd_logo{
-    width: 60px;
+    width: 160px;
+    height: 60px;
     border-radius: 12px;
     top: 0;
     left: 0;
     padding: 6px;
-    margin: 10px;
+    margin: 0 ;
+    
     align-content: center;
 }
 

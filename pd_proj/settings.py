@@ -120,7 +120,7 @@ if ENVIRONMENT == 'development':
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+    print('dohick')
 elif ENVIRONMENT == 'production':
     # Use S3 in production
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
@@ -138,7 +138,7 @@ elif ENVIRONMENT == 'production':
     # AWS S3 storage for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+    print('hickleberry')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
