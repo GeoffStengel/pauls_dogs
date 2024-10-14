@@ -316,7 +316,7 @@ h1, h2, h3 {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 270px));
     grid-template-rows: repeat(auto-fit, minmax(400px, 450px));
     gap: 10%;
     margin: 0 auto;
@@ -334,16 +334,30 @@ h1, h2, h3 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 20px;
-    background: var(--card-bkgd);
+}
+
+.card1{
+    background-image: url(https://cdn.pixabay.com/photo/2024/06/15/11/05/ai-generated-8831464_640.jpg);
+    background-size: cover;
+}
+.card2{
+    background-image: url(https://cdn.pixabay.com/photo/2024/03/25/18/05/ai-generated-8655246_1280.jpg);
+    background-size: cover;
+}
+.card3{
+    background-image: url(https://cdn.pixabay.com/photo/2024/09/09/14/34/ai-generated-9034992_1280.jpg);
+    background-size: cover;
 }
 .adoption-steps {
     background-color: var(--card-bkgd);
     padding: 20px;
     border-radius: 10px;
     box-shadow: var(--box-shadow-light);
-    max-width: 600px;
+    max-width: 800px;
+    height: auto;
     margin: auto;
 }
+
 
 .adoption-steps h2 {
     text-align: center;
@@ -356,12 +370,28 @@ h1, h2, h3 {
 }
 
 .adoption-steps li {
-    margin: 15px 0;
-    font-size: 18px;
+    margin: 25px 0;
+    font-size: 20px;
+
+}
+
+.sponsorship_steps_card_img{
+    width: 100px;
+    height: 100px;
 }
 /**how_to_adopt_puppy_grid****END*****/
 /************************/
 
+/*******3*Sponsorship*Cards*At*Bottom***START*******/
+.sponsorship_cards{
+    width: 200px;
+    height:200px;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+/******3*Sponsorship*Cards*At*Bottom*END*******/
+/************************/
 /************************/
 /**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid*/
 .sponsor_grid {
@@ -825,6 +855,18 @@ img.logo {
     margin-bottom: 15px; /* Space between paragraphs */
 }
 
+.how_to_adopt_puppy_grid div{
+    padding: 20px;
+}
+.how_to_adopt_puppy_grid{
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 270px));
+    grid-template-rows: repeat(auto-fit, minmax(400px, 401px));
+    gap: 20px;
+    font-size: 18px;
+    line-height: 35px;
+    padding: 10px;
+}
 
 /**Columm*1**In*Text*Grid*Under*Banner**/
 .body_text1 p, .body_text2 p{
