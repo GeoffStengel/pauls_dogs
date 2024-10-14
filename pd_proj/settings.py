@@ -38,6 +38,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # Application definition
 INSTALLED_APPS = [
+    'jazzmin',
     'core.apps.CoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,7 +132,8 @@ elif ENVIRONMENT == 'production':
     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_FILE_OVERWRITE = False  # Prevent file overwrites
-    AWS_DEFAULT_ACL = None         # No ACLs for security
+    #AWS_DEFAULT_ACL = None         # No ACLs for security
+    AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', 'public-read')
     AWS_QUERYSTRING_AUTH = False   # Simplify URLs
 
     # Set up static and media URLs for AWS S3
@@ -168,3 +170,50 @@ AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
 
+JAZZMIN_SETTINGS = {
+    "site_title": "Paul's Dogs Admin",
+    "site_header": "Pauls Dogs",
+    "site_brand": "Pauls Dogs",
+    "site_logo": "core/images/pd_logo_02.svg",
+    "welcome_sign": "Welcome to Pauls Dogs!",
+
+
+    "copyright": "Pauls Dogs",
+
+    "topmenu_links": [
+        {"app": "core"},
+        {"name": "Home", "url": "https://pauls-dogs-be568d40599e.herokuapp.com/", "new_window": True},
+    ],
+    "show_ui_builder": False,
+}
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": False,
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-info",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "cyborg",
+    "dark_mode_theme": None,
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}

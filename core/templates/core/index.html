@@ -79,7 +79,7 @@
     <!---How-To-Adopt-Puppy-Section-START-->
 
     <div class="adoption-steps">
-        <h2>Three Steps to Adopting a Pet</h2>
+        <h2 class="text"></h2>
         <ol>
             <li>
                 <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
@@ -93,21 +93,38 @@
         </ol>
     </div>
 
+    <script>
+        const div = document.querySelector(".text");
+        const text = "Three Steps to Adopting a Pet";
+
+        function textTypingEffect(element, text, i = 0) {
+            element.textContent += text(i);
+
+                if (i == text.length - 1) {
+                    return;
+                }
+
+                setTimeout(() => textTypingEffect(element, text, i + 1), 50);
+            }
+
+            textTypingEffect(div, text);
+        </script>
+
 
     <div class="how_to_adopt_puppy_grid">
-        <div>
+        <div class="card1">
             <p>Choose a Dog:</p>
             <p>to Sponsor:</p>
             <p><span>🐾</span> <strong> Browse through</strong>  our available dogs and select one to virtually
                 adopt.</p>
         </div>
-        <div>    
+        <div class="card2">    
             <p>Monthly Sponsorship:</p>
             <p>Commit to a monthly donation</p>
             that directly supports the well-being
 of your chosen dog.
         </div>
-        <div>    
+        <div class="card3">    
             <p>Receive Updates:</p>
             <p>You’ll get regular updates,</p>
             photos, and progress reports on how your
