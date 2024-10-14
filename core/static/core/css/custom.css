@@ -1,0 +1,12 @@
+#footer_version {
+    display: none;
+}
+
+/**Jazzy**/
+div.float-right.d-none.d-sm-inline {
+    display: none;
+    
+}
+b{
+    display: none; 
+}

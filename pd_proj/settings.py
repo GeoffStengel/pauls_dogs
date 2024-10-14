@@ -176,8 +176,9 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Pauls Dogs",
     "site_logo": "core/images/pd_logo_02.svg",
     "welcome_sign": "Welcome to Pauls Dogs!",
-
-
+    "show_version": False,  # setting to remove version text
+    "footer_logo": None,
+    "footer_title": "Pd Project Woof",
     "copyright": "Pauls Dogs",
 
     "topmenu_links": [
@@ -185,6 +186,7 @@ JAZZMIN_SETTINGS = {
         {"name": "Home", "url": "https://pauls-dogs-be568d40599e.herokuapp.com/", "new_window": True},
     ],
     "show_ui_builder": False,
+    "custom_css": "core/css/custom.css",
 }
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
