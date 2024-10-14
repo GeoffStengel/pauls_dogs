@@ -110,6 +110,7 @@ USE_TZ = True
 
 # Environment-based Static/Media File Handling
 ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
+#ENVIRONMENT = 'development' 
 
 if ENVIRONMENT == 'development':
     # Development settings for static and media files
@@ -120,7 +121,7 @@ if ENVIRONMENT == 'development':
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+    DEBUG = os.environ.get('DEBUG_DEVELOPMENT', 'True') == 'True'
     print('dohick')
 elif ENVIRONMENT == 'production':
     # Use S3 in production
@@ -144,7 +145,8 @@ elif ENVIRONMENT == 'production':
     print('hickleberry')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+print(f"ENVIRONMENT: {ENVIRONMENT}")
+print(f"DEBUG: {DEBUG}")
 
 #if ENVIRONMENT == 'production':
 # AWS S3 Configuration for Static and Media Files

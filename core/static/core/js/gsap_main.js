@@ -1,3 +1,4 @@
+//Scroll Trigger For Divs To Move when Scrolling Down, Also Draggable index puppy pics code 
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, Draggable);
 
