@@ -79,9 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pd_proj.wsgi.application'
 
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-}
+
 
 
 #Password Validators
@@ -120,9 +118,15 @@ if ENVIRONMENT == 'development':
         os.path.join(BASE_DIR, 'core/static'),
     ]
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    MEDIA_ROOT = BASE_DIR / 'media'
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
     DEBUG = os.environ.get('DEBUG_DEVELOPMENT', 'True') == 'True'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / "db.sqlite3",
+        }
+    }
     print('dohick')
 elif ENVIRONMENT == 'production':
     # Use S3 in production
@@ -143,25 +147,12 @@ elif ENVIRONMENT == 'production':
     # AWS S3 storage for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+    DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    }
     print('hickleberry')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-print(f"ENVIRONMENT: {ENVIRONMENT}")
-print(f"DEBUG: {DEBUG}")
-
-#if ENVIRONMENT == 'production':
-# AWS S3 Configuration for Static and Media Files
-#    STORAGES = {
-#    "default": {
-#        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Media files
-#        "LOCATION": "media",  # Media folder in S3 bucket
-#    },
-#    "staticfiles": {
-#        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  # Static files
-#        "LOCATION": "static",  # Static folder in S3 bucket
-#    },
-#}
 
 # AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
