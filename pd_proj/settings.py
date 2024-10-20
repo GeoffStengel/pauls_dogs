@@ -36,6 +36,10 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT = '/'
+LOGOUT_REDIRECT = '/'
+
 # Application definition
 INSTALLED_APPS = [
     'jazzmin',
@@ -46,6 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'item',
+    'dashboard',
+    'conversation',
 ]
 
 MIDDLEWARE = [
@@ -108,8 +115,8 @@ USE_I18N = True
 USE_TZ = True
 
 # Environment-based Static/Media File Handling
-ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
-#ENVIRONMENT = 'development' 
+#ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
+ENVIRONMENT = 'development' 
 
 if ENVIRONMENT == 'development':
     # Development settings for static and media files

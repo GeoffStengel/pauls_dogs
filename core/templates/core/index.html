@@ -2,10 +2,75 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-
 <!--Content Block Blocks Other Content From base.html-->
 {% block content %}
-     
+<main>
+
+<section>    
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Newest items</h2>
+        
+        <div class="grid grid-cols-5 gap-3">
+        {% for item in items %}
+            <div>
+                <a href="{% url 'item:detail' item.id %}">
+                    <div>
+                        <img src="{{ item.image.url }}" class="rounded-t-xl">
+                    </div>
+
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <h2 class="text-2xl">{{ item.name }}</h2>
+                        <p class="text-gray-500">Price: {{ item.price }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Categories</h2>
+        
+    <div class="grid grid-cols-3 gap-3">
+        {% for category in categories %}
+        <div>
+            <a href="#">
+                <div class="p-6 bg-white rounded-b-xl">
+                    <h2 class="text-2xl">{{ category.name }}</h2>
+                    <p class="text-gray-500">{{ category.items.count }} items</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>  
+</div>  
+</section> 
+
+    <section>    
+    <h1>Pauls Dogs & Creatures</h1>
+        <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
+        </p>        
+        <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
+            Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
+        </p>
+        <p>
+            Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
+            Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
+        </p>
+        <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
+        </p>        
+        <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
+            Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
+        </p>
+        <p>
+            Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
+            Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
+        </p>
+    </section> 
+    
+    
+
+
+
     <div class="homepage_content_grid">
         <div class="info_grid">
             {% for item in all %}
@@ -30,7 +95,9 @@
                                     <img class="header_banner_image" src="{{ item.lrg_banner_3.url }}" alt="Puppy Banner 3">
                                 </div>
                             </div>
-                        {% endfor %}
+         
+</main>     
+                {% endfor %}
                         <!--Header-Image-Banner-END-->
 
                         <!-- Navigation-buttons-For-Image-Banner-Start-->
@@ -39,13 +106,7 @@
                     </div>
                         <!-- Navigation-buttons-For-Image-Banner-Start-->
 
-                    <!-- Optional: Dots for slideshow-Start-->
-                    <div style="text-align:center">
-                        {% for item in all %}
-                            <span class="dot" onclick="currentSlide({{ forloop.counter }})"></span>
-                        {% endfor %}
-                    </div>
-                    <!-- Optional: Dots for slideshow-Start-->
+                   
                 
     <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->    
     <div class='home_description'>

@@ -26,6 +26,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path(f'{settings.ADMIN_URL}', admin.site.urls),
+    path('items/', include('item.urls')),
+    path('dashboard/', include('dashboard.urls')),
+    path('inbox/', include('conversation.urls')),
     path('', include('core.urls')),
 ]
 
