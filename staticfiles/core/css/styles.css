@@ -1,9 +1,13 @@
 /***CSS For Main base.html Page Pauls Dogs***/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    /*background-color: #24252A; */
+    text-decoration: none;
 }
 :root {
     --primary-color: #003366;
@@ -14,582 +18,225 @@
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
     --text-1: #eaf9fa;
     --text-2: #555555;
-}  
-/* nice pink rgb(238, 28, 175)
-/***Body Of The Website***/
-body{
-    background: var(--bkgd-color);
-    display: flex;
-    width: 100%;
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-}
 
-/**NAVE*BAR*STARTS***/
-header {
-    position: sticky;  /* Make the header sticky */
-    top: 0;            /* Stick to the top */
-    background-color: white;  /* Ensure visibility */
-    z-index: 1000;    /* Ensure it's above other content */
-}
-
-
-.pd_logo img {
-    display: flex;
-    width: 80px; /* Adjust the size as needed */
-    height: auto;
-    margin: 0 auto;
-   float: left;
-   margin: 20px 10px 10px 25px;
-}
-
-/***AD*BANNER*AT*TOP*OF*SITE*START***/
-.banner {
-    position: relative;
-    width: 100%;
-    height: 50px; /* Adjust height as needed */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: background-color 0.5s;
-    cursor: pointer; /* Change cursor to indicate clickability */
-}
-/***AD*BANNER*AT*TOP*OF*SITE*END***/ 
-
-/***Container Wraps Block Content And Is A Main Grid For Project***/
-.container{
-    display: grid;
-   /*** width: 100%; ***/
-    max-width: 1500px; /* Set max-width to desired value */
-    width: 100%;       /* Allow it to take full width up to max-width */
-    height:100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 80px auto auto auto auto;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    background: #eff0f1dd;
-}
-
-nav {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    background: #003366;
-    font-size: 24px;
-    text-align: center; 
-}
- 
-/***Nav Buttons At Top Of Website***/
-.nav-buttons {
-    display: flex;
-    width: 125px;
-    height: 40px;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-1);
-    justify-content: center;
-    /*grid-template-columns: minmax(150px, auto); */
-}
-
-.nav-links {
-    display: grid; 
-    max-width: 100%;            /* Use flexbox */
-    justify-content: center;   /* Center items */
-    align-items: center;       /* Center vertically */
-    position: absolute;        /* For dropdown effect */
-    top: 65px;                 /* Adjust as needed */
-    left: 50%;                 /* Center horizontally */
-    transform: translateX(-50%); /* Shift back to center */
-    padding: 10px;             /* Optional: padding for menu */
-    border-radius: 5px;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 120px));
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10%;
-}
-.nav-buttons:hover {
-    color: rgb(248, 228, 239);
-    text-decoration: underline;
-}
-
-.donate_button{
-    height: 100%;
-    border-radius: 20px;
-    background: var(--accent-color);
-}
-
-.donate_button_footer a{
-color: var(--accent-color);
-}
-
-.donate_button_footer{
-    color: var(--accent-color);
-}
-/***NAVE*BAR*ENDS***/
-
-    
-h1{
-    font-size: 32px;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-h1, h2, h3 {
-    font-family: 'Dancing Script', cursive;
-}
-
-
-/***INDEX.HTML*STYLING*START****/
-/***Grid On Home Page Hold main content***/
-.homepage_content_grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));   
-    width: 100%;
-    margin:0 auto;
-    justify-self: center;
-    align-self: center;
-    background: #e2edf8;
-}
-
-.info_grid{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    row-gap: 30px;
-    background-color: #f3f3f3;
-    align-self: center;
-}
-
-.image_grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
-    height:100%;
-    width:100%;
-    margin:0 auto;
-}
-
-/**To The Actual Image Elements Of The Img Tag**/
-.header_banner_image {
-    width: 100%;             /* Full width of the container */
-    height: auto;           /* Maintain aspect ratio */
-    max-height: 400px;      /* Set a maximum height */
-    margin-top: 5px;        /* Space from the top */
-    border-radius: 10px;    /* Rounded corners */
-    overflow: hidden;        /* Hide overflow */
-    object-fit: cover;       /* Ensure the image covers the area without stretching */
-}
-/***Grid*Holding*Puppy*Card*Adjusts*Cards***/
-.puppy_grid{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, 230px);
-    grid-template-rows: auto;
-    margin: 0 auto;
-    grid-gap: 35px;  
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-.puppy_grid div{
-    height: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.puppy_grid img{
-    width: 200px;
-    height: 250px;
-    margin: 0 auto;
-    margin-top: 10px;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/**6 Images Puppy Grid**/
-.puppy_grid_6_img{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 310px));
-    grid-template-rows: repeat(auto-fill, 340px);
-    margin: 0 auto;
-    gap: 3.1%;
-    row-gap: 50px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.puppy_grid_6_img div{
-    height: 100%;
-    box-shadow: var(--box-shadow-light);
-    border-radius: 10px;
-}
-
-/*profile image for puppy card*/
-.puppy_grid_6_img img{
-    width: 200px;
-    height: 250px;
-    margin: 0 auto;
-    margin-top: 5px;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.names_title_card{
-    background: #003366;
-}
-
-/***The Individual Cards For The Pets***/
-.puppy_item{
-    height: 100%;
-    background-color: var(--card-bkgd);
-    border: 2px solid #e2e2e2;
-    padding: 5px;
-}
-.puppy_item p{
-    text-align: center;
-}
-.puppy_item img{
-    margin-top: 15px;
-}
-
-.pet_description{  
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 15px;
-}
-
-.pet_name {
-    padding-top: 13px;
-    font-weight: bold;
-    color: var(--text-2);
-}
-
-.pet_title{
-    font-size: 12px;
-    font-weight: 200;
-    padding: 10px;
-    line-height: 20px;
-    font-weight: 550;
-    color: var(--text-2);
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.273);
-}
-
-.card_description{
-    display: grid;
-    padding-left: 10px;
-    font-size: 14px;
-}
-
-.adoption_discount{
-    color: var(--accent-color);
-    margin: 0 auto;
+/*newpallete*/
     font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    font-family: "Montserrat", sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+    --accent-color: rgb(238, 28, 175);
+}  
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
-/**how_to_adopt_puppy_grid****START********/
-/***Grid At Bottom Of Page Above Footer Column Grid***/
-.how_to_adopt_puppy_grid{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 270px));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 450px));
-    gap: 10%;
-    margin: 0 auto;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 18px;
-    line-height: 35px;
-    padding: 10px;
-}
-.how_to_adopt_puppy_grid div{
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.card1{
-    background-image: url(https://cdn.pixabay.com/photo/2024/06/15/11/05/ai-generated-8831464_640.jpg);
-    background-size: cover;
-}
-.card2{
-    background-image: url(https://cdn.pixabay.com/photo/2024/03/25/18/05/ai-generated-8655246_1280.jpg);
-    background-size: cover;
-}
-.card3{
-    background-image: url(https://cdn.pixabay.com/photo/2024/09/09/14/34/ai-generated-9034992_1280.jpg);
-    background-size: cover;
-}
-.adoption-steps {
-    background-color: var(--card-bkgd);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow-light);
-    max-width: 800px;
-    height: auto;
-    margin: auto;
-}
-
-
-.adoption-steps h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.adoption-steps ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.adoption-steps li {
-    margin: 25px 0;
-    font-size: 20px;
-
-}
-
-.sponsorship_steps_card_img{
-    width: 100px;
-    height: 100px;
-}
-/**how_to_adopt_puppy_grid****END*****/
-/************************/
-
-/*******3*Sponsorship*Cards*At*Bottom***START*******/
-.sponsorship_cards{
-    width: 200px;
-    height:200px;
-    object-fit: contain;
-    overflow: hidden;
-}
-
-/******3*Sponsorship*Cards*At*Bottom*END*******/
-/************************/
-/************************/
-/**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid*/
-.sponsor_grid {
-    display: grid;
-    width: 100%;
-    height: 670px;
-    padding: 10px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin:0 auto;
-    align-items: center;
-    justify-items: center;
-}
-
-/**Grid*At*Bottom*With*7-8*Logos**/
-.thank_U_sponsors_img{
-    background: var(--card-bkgd);
-    margin: 0 auto;
-    width: 100%;
-}
-
-.sponsor_logos_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 125px);
-    grid-gap: 20px;
-}
-.sponsor_logos_grid img{
-    width: 100%;
-    height: 100%;
-}
-.box{
-    width: 100%;
-    height: 100%;
-    background-color: var(--card-bkgd);
-}
-
-.box1 {
-    grid-column: 1/3;
-}
-/***INDEX.HTML*STYLING*END****/
-/************************/
-
-/************************/
-/***PETS.HTML*STYLING*START****/
-.pets_content_grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));   
-    width: 90%;
-    margin:0 auto;
-    justify-self: center;
-    align-self: center;
-    background: #e2edf8;    
-}
-
-.all_puppy_grid{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, 210px);
-    grid-template-rows: repeat(auto-fill, 325px);
-    margin: 0 auto;
-    margin-top: 15px;
-    grid-gap: 3%;  
-    row-gap:20px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-}
-
-.all_puppy_grid div{
-    height: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/************************/
-/***PETS.HTML*STYLING*START****/  
-/***SlideShow***START*/
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.mySlides {
-    display: none;
-}
-
-/**Large Image Banner At Top Of Home Page**/
-.header_banner_image {
-    width: 100%; /* Full width */
-    height: 400px; 
+body{
+    color: black;
+    background-color: white;
     margin: 0;
+    padding: 0;
 }
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+body::-webkit-scrollbar {
+    width: .4rem;
+    
 }
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+body::-webkit-scrollbar-track {
+    background: var(--bg-primary);
 }
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+body::-webkit-scrollbar-thumb {
+    background: #0088a9;
 }
-/***SlideShow***END*/
-/************************/
-
-/************************/
-/*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
-.home_description {
+/*******************/
+/*Base Container START*/
+#base_container{
     display: grid;
-    background-color: var(--card-bkgd); /* Light background for contrast */
-    border-radius: 10px; 
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10%; /**Space In Between The Columns & Rows**/
-    padding: 40px; /* Space inside the container */
-    margin: 10px auto; /* Center the container */
-    max-width: 1350px; 
-    box-shadow: var(--box-shadow-light); /* Soft shadow for depth */
-    font-family: 'Montserrat', sans-serif; /* Font choice */
-    padding: 10px;
+    max-width:1100px;
+    grid-gap: 20px;
+    grid-template-columns: auto 1fr;
+    justify-content: space-evenly;
 }
 
-.home_description p {
-    line-height: 1.6; /* Increased line height for readability */
-    font-size: 16px; /* Base font size */
-    color: var(--text-2); /* Dark text color for contrast */
-    margin-bottom: 15px; /* Space between paragraphs */
+/*******************/
+/*Base Container END*/
+
+/*******************/
+/*HEADER STYLING START*/
+#nav-links li, #nav-links a, button{
+    font-weight: 500;
+    color: #edf0f1;
+    
 }
 
-.home_description p:first-of-type {
-    font-weight: bold; /* Make the first paragraph bold */
-    font-size: 16px; /* Slightly larger for emphasis */
-    color: #007bff; /* Highlight color for the first paragraph */
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252A;
 }
 
-.home_description p:last-of-type {
-    font-style: italic; /* Italicize the last paragraph for a heartfelt touch */
-    color: var(--text-2); /* Softer color for the last paragraph */
+#logo{
+    cursor: pointer;
+    margin-right: auto;
+   
 }
 
-/**Image*in*Text*Grid*Under*Banner**/
-/**Columm*1**In*Text*Grid*Under*Banner**/
-.body_text1, .body_text2{
-   padding: 5%;
-   padding-top: 0;
-   text-align: center;
+#nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
 }
-/**Columm*2**In*Text*Grid*Under*Banner**/
-.body_text2_img, .body_text1_img{
+
+#nav-links a:hover{
+    color:#0088a9;
+}
+
+button{
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: var(--accent-color);
+    background-color: rgb(0, 136, 169);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0;
+}
+button:hover{
+    background-color: rgb(238, 28, 175, 0.8);
+
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+/*HEADER STYLING END*/
+/*******************/
+
+
+
+/*SIDEBAR STYLING START*/
+/*******************/
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.aside{
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease;
+}
+
+/*
+.aside:hover {
+    width: 16rem;
+}
+/*
+.aside:hover .link-text {
+    display: block;
+}*/
+
+#sidebar{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.sidebar-item{
     width: 100%;
-    border-radius: 10px;
-}
-/*******Grid*Under*Lrg*Banner***END******/
-/************************/
-
-/************************/
-/***ABOUT*CSS*START***/
-.about_body_description{
-    background-color: var(--card-bkgd); /* Light background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Space inside the container */
-    margin: 20px auto; /* Center the container */
-    max-width: 600px; /* Limit width for better readability */
-    box-shadow: var(--box-shadow-light); /* Soft shadow for depth */
-    font-family: 'Montserrat', sans-serif; /* Font choice */
 }
 
-.about_body_description p {
-    line-height: 1.6; /* Increased line height for readability */
-    font-size: 16px; /* Base font size */
-    color: var(--text-2); /* Dark text color for contrast */
-    margin-bottom: 15px; /* Space between paragraphs */
+.sidebar-item:last-child{
+    margin-top: auto;
 }
-/***ABOUT PAGE**CSS*END***/
-/************************/
+
+.sidebar-link{
+    display: flex;
+    align-items: center;
+    height: 5rem; /*Space in between rows how Tall*/
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.sidebar-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+/*Text Next To Icons Sidebar*/
+.link-text{ 
+    display: none;
+    margin-left: 1rem;
+}
+
+.sidebar-link svg{
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.fa-primary {
+    color: #ff7eee;
+}
+
+.fa-secondary {
+    color: #df49a6;
+}
+
+.fa-primary, .fa-secondary {
+    transition: var(--transition-speed);
+}
+
+.sidebar-logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+.sidebar-logo svg{
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+}
+
+.logo-text{
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+}
+
+.aside:hover .sidebar-logo svg {
+    transform: rotate(-180deg);
+}
+/*SIDEBAR STYLING END*/
+/*******************/
+
+/*NEW SECTION START*/
+/*******************/
+
+
+
+/*NEW SECTION END*/
+/*******************/
+
+
+
+
 
 
 /************************/
@@ -619,384 +266,67 @@ h1, h2, h3 {
 /************************/
 
 
-/*Contact Page START*/
-/************************/
-.contact-info-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--card-bkgd);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
+/*******************/
+/*MEDIA QUERIES START*/
+/*******************/
 
-.contact-details p, .contact-hours p {
-    font-family: 'Verdana', sans-serif;
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-}
-
-.contact-details p strong, .contact-hours p strong {
-    color: #000;
-}
-
-.contact-hours {
-    margin-top: 30px;
-}
-
-.contact-info-container p {
-    line-height: 1.6;
-}
-
-
-/*Contact Page END*/
-/************************/
-
-
-
-@keyframes appear{
-    from{
-        opacity: 0;
-        scale: 0.5;
+/**Bottom icon bar end*/
+/*******************/
+/*Small Screens for bottom icon bar*/
+@media only screen and (max-width: 600px) {
+    .aside {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        transition: width 600ms ease;
     }
-    to{
-        opacity: 1;
-        scale: 1;
+    .sidebar-logo {
+        display: none;
     }
-}
-.home_description, .puppy_grid_6_img, .adoption-steps, .how_to_adopt_puppy_grid, .sponsor_grid {
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
-@media screen and (max-width: 1200px){
-
- .thank_U_sponsors_img img{
-    width: 400px;
-}
-
-.nav-links{
-    gap: 5%;
- }
-}
-
-@media screen and (max-width: 1020px){
-/*****Hamburger START*************/
-nav {
-    position: relative;
-}
-
-img.logo {
-    position: absolute;
-    margin: 10px 10px 10px 0px;
-    padding: 0;
-    align-self: center;
-    left: 45%;
-    width: 100px;
-}
-img.logo {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0px 10px 10px 10px;
-  }
-
-.hamburger {
-    cursor: pointer;
-    width: 35px;
-    height: 30px;
-    position: relative;
-    margin: 10px;
-}
-
-.bar {
-    height: 5px;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-}
-
-.bar1 {
-    background: var(--accent-color); /* Orange */
-}
-
-.bar2 {
-    background: #00c853; /* Green */
-}
-
-.bar3 {
-    background: #2979ff; /* Blue */
-}
-
-.nav-links {
-    display: none;
-    position: absolute;
-    top: 50px; /* Adjust as needed */
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 20px;
-    z-index: 1000;
-    opacity: 0; /* Start hidden */
-    transform: translateY(-10px); /* Initial position */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links.show {
-    display: block;
-    opacity: 1; /* Fade in */
-    transform: translateY(0); /* Move to original position */
-}
-
-.nav-buttons {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    transition: background 0.3s, color 0.3s;
-}
-
-.nav-buttons:hover {
-    background: #f0f0f0;
-    color: #000;
-}
-
-/* Animation for the bars */
-.bar1.active {
-    transform: rotate(45deg) translate(6px, 6px); /* Adjusted for better X shape */
-    width: 34px;
-}
-
-.bar2.active {
-    opacity: 0; /* Fade out */
-}
-
-.bar3.active {
-    transform: rotate(-45deg) translate(7px, -6px); /* Adjusted for better X shape */
- }
-}
-
-/* Initially hide the hamburger button */
-@media screen and (min-width: 1021px) {
-    .hamburger {
-        display: none; /* Hide hamburger button */
+    #sidebar {
+        flex-direction: row;
     }
+    .sidebar-link {
+        justify-content: center;
+    }
+    main {
+        margin: 0;
+    }
+  
 }
-/**NAV*BAR*END**/
 
-@media (max-width: 850px) {
-    /*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
-img.logo {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-    .home_description {
-        grid-template-columns: 1fr;
-        grid-gap: 2%; /**Space In Between The Columns & Rows**/
-        padding: 40px; /* Space inside the container */
-        margin: 0 auto; /* Center the container */
-        
+/* LARGE SCREENS for bottom icon bar*/
+@media only screen and (min-width: 600px) {
+    .aside {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .aside:hover {
+        width: 16rem;
+    }
+
+    .aside:hover .link-text {
+        display: inline;
+        /*transition: opacity var(--transition-speed);*/
+    }
+    .link-text:hover{
+        display: none;
+    }
+    
+    .aside:hover .sidebar-logo svg {
+      margin-left: 11rem;
     } 
-    .info_grid{
-        height: 100%;
-        width: 100%;
-        row-gap: 10px;  
-        align-self: center;
-    } 
- /**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid*/
-.sponsor_grid{
-    max-width: 900px;
-    height: 100%;
-    padding: 10px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
- }
- .thank_U_sponsors_img{
-    width: 400px;
-    margin: 0 auto;
-    justify-self: center;
-}    
-}
-
-@media (max-width: 700px) {
-/*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
-.home_description {
-    grid-template-columns: 1fr;
-    grid-gap: 2%; /**Space In Between The Columns & Rows**/
-    padding: 40px; /* Space inside the container */
- }
-}
-
-@media (max-width: 650px) {
-.home_description { 
-    grid-gap: 10px; /**Space In Between The Columns & Rows**/
-    padding: 0; /* Space inside the container */
-    width: 100%;
-} 
-/*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
-.home_description img {
-    width: 100%;               /* Set the width of the image */
-    max-width: 100%;          /* Ensure it doesn’t exceed the container width */
-    height: auto;             /* Maintain aspect ratio */
-    justify-self: center;     /* Center the image in the grid */
-    display: block;           /* Ensure it behaves like a block element */
-    margin: 0 auto;          /* Center the image horizontally */
-}
-/**Image*in*Text*Grid*Under*Banner**/
-
-.home_description p {
-    line-height: 1.6; /* Increased line height for readability */
-    font-size: 12px; /* Base font size */
-    margin-bottom: 15px; /* Space between paragraphs */
-}
-
-.how_to_adopt_puppy_grid div{
-    padding: 20px;
-}
-.how_to_adopt_puppy_grid{
-    height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 270px));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 401px));
-    gap: 20px;
-    font-size: 18px;
-    line-height: 35px;
-    padding: 10px;
-}
-
-/**Columm*1**In*Text*Grid*Under*Banner**/
-.body_text1 p, .body_text2 p{
-    padding: 0;
-    text-align: center;
-    font-size: 10px;
- }
- .body_text1{
-    padding: 0;
-    margin: 0;
- }
-}
-
-@media (max-width: 600px) {
-    .contact-info-container {
-        padding: 10px;
-    }
-
-    .contact-details p, .contact-hours p {
-        font-size: 14px;
+    
+    .aside:hover .logo-text {
+        left: 0px;
     }
 }
+/*Bottom icon bar end*/
+/*******************/
 
-@media screen and (max-width: 568px) {
-.adoption-steps{
-    padding: 5px;
-    font-size: 14px;
-    text-align: center;
-}
-}
-@media screen and (max-width: 480px) {
-.home_description { 
-    grid-gap: 10px; /**Space In Between The Columns & Rows**/
-    padding: 0; /* Space inside the container */
-    width: 100%;
-} 
-/*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
-.home_description img {
-    width: 100%;               /* Set the width of the image */
-           /* Ensure it doesn’t exceed the container width */
-    height: auto;             /* Maintain aspect ratio */
-    justify-self: center;     /* Center the image in the grid */
-    display: block;           /* Ensure it behaves like a block element */
-         
-}
-/**Image*in*Text*Grid*Under*Banner**/
+/*MEDIA QUERIES END*/
+/*******************/
 
-.home_description p {
-    line-height: 1.6; /* Increased line height for readability */
-    font-size: 12px; /* Base font size */
-    margin-bottom: 15px; /* Space between paragraphs */
-}
-.body_text1 p{
-    font-size: 12px;
-}
 
-.adoption-steps li{
-    margin: 15px 0;
-    font-size: 14px;
-}
-.adoption-steps {
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.adoption-steps h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.adoption-steps ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-/**Large Image Banner At Top Of Home Page**/
-.header_banner_image {
-    width: 100%; /* Full width */
-    height: 200px; 
-    margin: 0;
-}
-.info_grid{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    row-gap: 0;
-    align-self: center;
-}
-/***Grid At Bottom Of Page Above Footer Column Grid***/
-.how_to_adopt_puppy_grid{
-    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 450px));
-    gap: 2%;
-    margin: 0 auto;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 18px;
-    line-height: 35px;
-    padding: 10px;
-}
-.how_to_adopt_puppy_grid div{
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    background: var(--card-bkgd);
-}
- /**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid*/
- .sponsor_grid{
-    max-width: 100%;
-    height: 100%;
-    padding: 0;
- }
- .sponsor_logos_grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 125px);
-    grid-gap: 10px;
-}
-.adoption_discount{
-    margin-bottom: 5px;
-}
-}
-@media screen and (max-width: 325px) {
-.header_banner_image {
-    width: 100%; /* Full width */
-    height: 150px; 
-    margin: 0;
-}
-}

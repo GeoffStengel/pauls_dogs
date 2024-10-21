@@ -35,11 +35,14 @@ html {
 }
 
 body{
+    display: grid;
+    min-height: 100vh;
     color: black;
-    background-color: white;
-    margin: 0;
+    background-color: rgb(138, 246, 44);
     padding: 0;
+    margin: 0 auto;
 }
+
 body::-webkit-scrollbar {
     width: .4rem;
     
@@ -50,13 +53,19 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background: #0088a9;
 }
+
+
 /*******************/
+/*Base is our base.html file*/
 /*Base Container START*/
-#base_container{
-    
-    max-width: 900px;
-    grid-gap: 120px;
-}
+#base_container {
+    display: grid;
+    height: 1000vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    height: 100vh;
+  }
 
 /*******************/
 /*Base Container END*/
@@ -66,7 +75,6 @@ body::-webkit-scrollbar-thumb {
 #nav-links li, #nav-links a, button{
     font-weight: 500;
     color: #edf0f1;
-    
 }
 
 header{
@@ -80,7 +88,6 @@ header{
 #logo{
     cursor: pointer;
     margin-right: auto;
-   
 }
 
 #nav-links li{
@@ -104,7 +111,6 @@ button{
 }
 button:hover{
     background-color: rgb(238, 28, 175, 0.8);
-
 }
 
 h1 {
@@ -233,13 +239,11 @@ main{
 /*******************/
 
 
-
-
-
-
 /************************/
 /*****FOOTER*SECTION*START**In Base.html*****/
+/***
 .footer_grid{
+    
     display: grid;
     width: 100%;
     height: 250px;
@@ -249,6 +253,22 @@ main{
     align-items: center;
     justify-content: center;
     text-align: right;
+}****/
+.footer_grid {
+    float: bottom;
+    display: grid;
+    width: 100%;
+    height: 250px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, auto);
+    background: #333;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
+.footer_grid:last-child{
+    margin-top: auto;
+    
 }
 
 /**Decorates and Adjusts Text In Footer**/
@@ -262,6 +282,23 @@ main{
 
 /***FOOTER*SECTION*END**In Base.html***/
 /************************/
+
+
+
+/*Homepage SECTION START*/
+/*******************/
+#homepage_content_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    justify-content: center;
+   
+}
+
+
+/*Homepage SECTION END*/
+/*******************/
 
 
 
