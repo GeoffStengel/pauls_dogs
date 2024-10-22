@@ -33,10 +33,10 @@
 html {
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
-
+/*body extend full height*/
 body{
     display: grid;
-    min-height: 100vh;
+    height: 100vh;
     color: black;
     background-color: rgb(138, 246, 44);
     padding: 0;
@@ -60,12 +60,18 @@ body::-webkit-scrollbar-thumb {
 /*Base Container START*/
 #base_container {
     display: grid;
-    height: 1000vh;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 10px;
-    height: 100vh;
+    height: 100%;
   }
+
+
+#base_contentblock_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
 
 /*******************/
 /*Base Container END*/
@@ -293,14 +299,101 @@ main{
     grid-template-rows: auto;
     grid-gap: 50px;
     justify-content: center;
-   
 }
 
+.section_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
 
+    margin-top: 1.5rem; /* mt-6 */
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem; /* px-6 */
+    padding-top: 1.5rem; /* py-12 */
+    padding-bottom: 1rem; /* py-12 */
+}
 /*Homepage SECTION END*/
 /*******************/
 
 
+/*******************/
+/*ITEMS is our items.html file*/
+/*ITEMS START*/
+/******* q: how to have this tailwinds code in css pb-6 grid grid-cols-4 gap-4 bg-gray-100 ************/ 
+#main_wrapper_items_page{
+    display: grid;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1.5rem; /* pb-6 */
+  
+    grid-template-columns: 1fr 5fr; /* grid-cols-4 */
+    grid-template-rows: auto;
+    gap: 1rem; /* gap-4 */
+    background-color: #f7fafc; 
+    margin: 0 auto;
+}
+
+.form_grid_and_formBtns{
+    max-width: 250px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    margin-left: 20px;
+    background-color: #de0cb1;
+  /*  grid-column: span 1 / span 1;*/
+}
+
+.grid_holding_item_cards{
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
+    grid-template-rows: repeat(auto-fill, minmax(378px, 380px));
+    gap: 3%;
+    padding: 1rem;
+    background-color: #8d0cde;
+}
+
+.item_profile_img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /*border-radius: 10px; */
+    border-top-left-radius: 1rem; 
+    border-top-right-radius: 1rem;
+}
+
+.text_wrapper_item_thumbnail{
+    padding: 1.5rem; 
+    background-color: #ffffff; 
+    border-bottom-left-radius: 1rem; 
+    border-bottom-right-radius: 1rem;
+}
+
+#individual_item_card_wrapper{
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color:#fedb72dd ;
+}
+
+.solo_div_around_item_image{
+    max-width: 250px;
+}
+/*******************/
+/*ITEMS END*/
+/*******************/
 
 /*******************/
 /*MEDIA QUERIES START*/
