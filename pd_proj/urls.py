@@ -29,7 +29,7 @@ urlpatterns = [
     path('items/', include('item.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('inbox/', include('conversation.urls')),
-    path('', include('core.urls')),
+    path('', include('core.urls', namespace='core')),
 ]
 
     # Serve static and media files in development

@@ -7,6 +7,7 @@ from .forms import SignupForm
 
 # Create your views here.
 
+
 def home(request):
     items = Item.objects.filter(is_sold=False)[0:6]
     categories = Category.objects.all()
@@ -36,7 +37,7 @@ def pets(request):
     all_pet_profiles = PetProfile.objects.all()
     
     context = {
-        'all_pets': all_pet_profiles
+        'pets': all_pet_profiles
     }    
     
     return render(request, 'core/pets.html', context )
@@ -89,7 +90,7 @@ def index(request):
         'items': items,
     })
 
-
+ 
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)

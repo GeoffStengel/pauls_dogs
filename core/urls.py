@@ -5,6 +5,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from . import views
 from .forms import LoginForm
+ 
+app_name = 'core'
 
 urlpatterns = [
     path('', views.home, name='home-home'),
