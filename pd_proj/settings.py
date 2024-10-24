@@ -15,12 +15,12 @@ from dotenv import load_dotenv
 import dj_database_url
 import django_heroku
 
-load_dotenv()
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -122,8 +122,8 @@ if ENVIRONMENT == 'development':
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        #os.path.join(BASE_DIR, 'core/static'),
-        BASE_DIR / 'core/static'
+        os.path.join(BASE_DIR, 'core/static'),
+        #BASE_DIR / 'core/static'
     ]
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
