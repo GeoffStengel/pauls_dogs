@@ -1,3 +1,4 @@
+//Top AD Banner Changes 3 colors
 const banners = [
     { text: "Adopt a Pet Today!", color: "#007bff", link: "https://example.com/adopt" },
     { text: "Special Adoption Discounts!", color: "#00c853", link: "https://example.com/discounts" },

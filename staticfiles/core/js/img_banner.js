@@ -1,4 +1,4 @@
-//SlideShow
+//SlideShow For Image Banner On Index Page
 let slideIndex = 1;
 showSlides(slideIndex);
 

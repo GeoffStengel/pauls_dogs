@@ -14,11 +14,47 @@
                 <a class="adoption_discount" href="#">{{ item.sale_banner }}</a>
             {% endfor%}
     </section>
+  
+    <section>
+    <!--Header-Image-Banner-Start-->
+    <div class="slideshow-container">
+        {% for item in all %}
+            <div class="mySlides fade">
+                <div class="image_grid">
+                    <img class="header_banner_image" src="{{ item.lrg_banner.url }}" alt="Puppy Banner 1">
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="image_grid">
+                    <img class="header_banner_image" src="{{ item.lrg_banner_2.url }}" alt="Puppy Banner 2">
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="image_grid">
+                    <img class="header_banner_image" src="{{ item.lrg_banner_3.url }}" alt="Puppy Banner 3">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+            <!-- Navigation-buttons-For-Image-Banner-Start-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!-- Navigation-buttons-For-Image-Banner-Start-->
         
-    
+        <!-- Optional: Dots for slideshow-Start-->
+        <div style="text-align:center">
+            {% for item in all %}
+                <span class="dot" onclick="currentSlide({{ forloop.counter }})"></span>
+            {% endfor %}
+        </div> 
+        <!-- Optional: Dots for slideshow-Start-->
+    <!--Header-Image-Banner-END OLD-->
+    </section>            
+
+
     <section>
     <div class="section_wrapper ">   
-        <h2 class="mb-6 text-2xl text-center">Newest items</h2>
+        <h2 class="page_name_h2">Newest items</h2>
         
         <div class="grid_holding_item_cards">
         {% for item in items %}
@@ -56,47 +92,8 @@
 </section> 
 
 
-    
-    
-
-
-
 <div class="homepage_content_grid">
     
-                <section>
-                    <!--Header-Image-Banner-Start-->
-                    <div class="slideshow-container">
-                        {% for item in all %}
-                            <div class="mySlides fade">
-                                <div class="image_grid">
-                                    <img class="header_banner_image" src="{{ item.lrg_banner.url }}" alt="Puppy Banner 1">
-                                </div>
-                            </div>
-                            <div class="mySlides fade">
-                                <div class="image_grid">
-                                    <img class="header_banner_image" src="{{ item.lrg_banner_2.url }}" alt="Puppy Banner 2">
-                                </div>
-                            </div>
-                            <div class="mySlides fade">
-                                <div class="image_grid">
-                                    <img class="header_banner_image" src="{{ item.lrg_banner_3.url }}" alt="Puppy Banner 3">
-                                </div>
-                            </div>
-                        {% endfor %}
-                <section>   
-         
-    
-                        
-                        <!--Header-Image-Banner-END-->
-
-                        <!-- Navigation-buttons-For-Image-Banner-Start-->
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                        <!-- Navigation-buttons-For-Image-Banner-Start-->
-
-                   
-                
     <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->
 <section>       
     <div class='home_description'>
@@ -214,42 +211,44 @@
 <!---->
 <!---SPONSOR_GRID-START-->
 <section>
-<div class="sponsor_grid">
-    <div class="thank_U_sponsors_img">
-        <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
+    <div class="sponsor_grid">
+        <div class="thank_U_sponsors_img">
+            <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
+        </div>
+        <div class="sponsor_logos_grid">
+            <div class="box box1">
+                <img  src="{{ all.0.sponsor_01_img.url }}">
+            </div>
+            <div class="box box2">
+                <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
+            </div>
+            <div class="box box3">
+                <img src="{{ all.0.sponsor_03_img.url }}">
+            </div>
+            <div class="box box4">    
+                <img src="{{ all.0.sponsor_04_img.url }}">
+            </div>
+            <div class="box box5">        
+                <img src="{{ all.0.sponsor_05_img.url }}">
+            </div>    
+            <div class="box box6">    
+                <img src="{{ all.0.sponsor_06_img.url }}">
+            </div>    
+            <div class="box box7">        
+                <img src="{{ all.0.sponsor_07_img.url }}">
+            </div>    
+        </div>
     </div>
-    <div class="sponsor_logos_grid">
-        <div class="box box1">
-            <img  src="{{ all.0.sponsor_01_img.url }}">
-        </div>
-        <div class="box box2">
-            <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
-        </div>
-        <div class="box box3">
-            <img src="{{ all.0.sponsor_03_img.url }}">
-        </div>
-        <div class="box box4">    
-            <img src="{{ all.0.sponsor_04_img.url }}">
-        </div>
-        <div class="box box5">        
-            <img src="{{ all.0.sponsor_05_img.url }}">
-        </div>    
-        <div class="box box6">    
-            <img src="{{ all.0.sponsor_06_img.url }}">
-        </div>    
-        <div class="box box7">        
-            <img src="{{ all.0.sponsor_07_img.url }}">
-        </div>    
-    </div>
-</div>
 </section>
 <!---SPONSOR_GRID-END-->
 <!---->
 
-    </div>         
-</div>  
+        </div>         
+    </div>  
 </div>
 </main> 
+<!--Holds Image SlideShow Banner At Top-->
+<script src="{% static 'core/js/img_banner.js' %}"></script>
 {% endblock content%} 
 
  
