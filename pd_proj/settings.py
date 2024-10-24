@@ -116,7 +116,6 @@ USE_TZ = True
 
 # Environment-based Static/Media File Handling
 ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
-#ENVIRONMENT = 'development' 
 
 if ENVIRONMENT == 'development':
     # Development settings for static and media files

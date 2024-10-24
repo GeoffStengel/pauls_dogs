@@ -310,6 +310,13 @@ main{
     padding-top: 1.5rem;
     padding-bottom: 1rem;
 }
+
+.section_mission{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding: 10px;
+}
 /*Homepage SECTION END*/
 /*******************/
 
@@ -317,6 +324,7 @@ main{
 /*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
 .home_description {
     display: grid;
+    height: 100%;
     background-color: var(--card-bkgd); /* Light background for contrast */
     border-radius: 10px; 
     grid-template-columns: 1fr 1fr;
@@ -358,14 +366,10 @@ main{
 .body_text2_img, .body_text1_img{
     width: 100%;
     border-radius: 10px;
+    background-color: #c08fb5;
 }
 /*******Grid*Under*Lrg*Banner***END******/
 /************************/
-
-
-
-
-
 
 
 
@@ -445,7 +449,7 @@ footer {
     grid-template-rows: repeat(auto-fill, minmax(378px, 380px));
     gap: 3%;
     padding: 1rem;
-    background-color: #8d0cde;
+    background-color: var( --bkgd-color);
     border-radius: 20px;
     justify-content: space-evenly;
 }

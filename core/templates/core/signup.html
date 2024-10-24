@@ -12,25 +12,25 @@
         {% csrf_token %}
         
 
-        {{ form.as_p }}
+        {{ form.non_field_errors }}
 
         <div class="mb-3">
-            <label class="inline-block mb-2">Username</label><br>
-            {{ form.user.name }}
+            <label class="inline-block mb-2" for="id_username">Username</label><br>
+            {{ form.username }}
         </div> 
-        
+
         <div class="mb-3">
-            <label class="inline-block mb-2">email</label><br>
+            <label class="inline-block mb-2" for="id_email">Email</label><br>
             {{ form.email }}
         </div>
 
         <div class="mb-3">
-            <label class="inline-block mb-2">Password</label><br>
+            <label class="inline-block mb-2" for="id_password1">Password</label><br>
             {{ form.password1 }}
         </div>
 
         <div class="mb-3">
-            <label class="inline-block mb-2">Repeat Password</label><br>
+            <label class="inline-block mb-2" for="id_password2">Repeat Password</label><br>
             {{ form.password2 }}
         </div>
 
@@ -40,13 +40,12 @@
                 {{ field.errors }}
             {% endfor %}
 
-            {{ form.non_field_errors }}
         </div>
         {% endif %}
 
         
         <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
-    <form>
+    </form>
 
 </div> 
 {% endblock content %}

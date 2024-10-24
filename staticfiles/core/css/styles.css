@@ -140,7 +140,9 @@ h1 {
 /* Sidebar styles */
 main{
     margin-left: 5rem;
+    margin-top: 0;
     padding: 1rem;
+    padding-top: 0;
 }
 
 .aside{
@@ -251,7 +253,12 @@ main{
 .adoption_discount{
     margin: 0 auto;
     color: var(--accent-color);
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 0%;
     display: block;
+    text-align: center;
+    font-size: 14px;
 }
 
 .signup_btn{
@@ -303,8 +310,68 @@ main{
     padding-top: 1.5rem;
     padding-bottom: 1rem;
 }
+
+.section_mission{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding: 10px;
+}
 /*Homepage SECTION END*/
 /*******************/
+
+/************************/
+/*******Grid*Under*Lrg*Banner*Holds*Text*1*image*START******/
+.home_description {
+    display: grid;
+    height: 100%;
+    background-color: var(--card-bkgd); /* Light background for contrast */
+    border-radius: 10px; 
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10%; /**Space In Between The Columns & Rows**/
+    padding: 40px; /* Space inside the container */
+    margin: 10px auto; /* Center the container */
+    max-width: 1350px; 
+    box-shadow: var(--box-shadow-light); /* Soft shadow for depth */
+    font-family: 'Montserrat', sans-serif; /* Font choice */
+    padding: 10px;
+}
+
+.home_description p {
+    line-height: 1.6; /* Increased line height for readability */
+    font-size: 16px; /* Base font size */
+    color: var(--text-2); /* Dark text color for contrast */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.home_description p:first-of-type {
+    font-weight: bold; /* Make the first paragraph bold */
+    font-size: 16px; /* Slightly larger for emphasis */
+    color: #007bff; /* Highlight color for the first paragraph */
+}
+
+.home_description p:last-of-type {
+    font-style: italic; /* Italicize the last paragraph for a heartfelt touch */
+    color: var(--text-2); /* Softer color for the last paragraph */
+}
+
+/**Image*in*Text*Grid*Under*Banner**/
+/**Columm*1**In*Text*Grid*Under*Banner**/
+.body_text1, .body_text2{
+   padding: 5%;
+   padding-top: 0;
+   text-align: center;
+}
+/**Columm*2**In*Text*Grid*Under*Banner**/
+.body_text2_img, .body_text1_img{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #c08fb5;
+}
+/*******Grid*Under*Lrg*Banner***END******/
+/************************/
+
+
 
 
 /************************/
@@ -382,7 +449,7 @@ footer {
     grid-template-rows: repeat(auto-fill, minmax(378px, 380px));
     gap: 3%;
     padding: 1rem;
-    background-color: #8d0cde;
+    background-color: var( --bkgd-color);
     border-radius: 20px;
     justify-content: space-evenly;
 }
