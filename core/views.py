@@ -1,11 +1,8 @@
-
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import HomePage, PetProfile, AboutPage, PrivacyPage, TermsPage
 from item.models import Category, Item
 from .forms import SignupForm
-
-# Create your views here.
 
 
 def home(request):

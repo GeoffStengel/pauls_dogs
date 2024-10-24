@@ -51,4 +51,4 @@ class PrivacyPage(models.Model):
 class TermsPage(models.Model):
     terms_text = models.TextField()
     
-    
+     
