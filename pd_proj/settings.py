@@ -122,7 +122,8 @@ if ENVIRONMENT == 'development':
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'core/static'),
+        #os.path.join(BASE_DIR, 'core/static'),
+        BASE_DIR / 'core/static'
     ]
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
