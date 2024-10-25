@@ -6,7 +6,7 @@ from .forms import SignupForm
 
 
 def home(request):
-    items = Item.objects.filter(is_sold=False)[0:6]
+    items = Item.objects.filter(is_sold=False)[0:8]
     categories = Category.objects.all()
 
     homepage_info =HomePage.objects.first()
