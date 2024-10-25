@@ -26,12 +26,3 @@ class Item(models.Model):
     def __str__(self):
         return self.name
     
-
-
-"""   
-    @property
-    def image_url(self):
-        if self.image:
-            return self.image.url
-        return static('images/default.jpg')
-"""        
