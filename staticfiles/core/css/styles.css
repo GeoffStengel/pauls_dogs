@@ -295,28 +295,7 @@ main{
     justify-content: center;
 }
 
-.section_wrapper{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-    padding: 1rem;
-    margin: 0 auto;
-    background-color: #f7fafc;
-    border-radius: 0.75rem;
-    margin-top: .5rem; 
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-}
 
-.section_mission{
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    padding: 10px;
-}
 /*Homepage SECTION END*/
 /*******************/
 
@@ -371,6 +350,67 @@ main{
 /*******Grid*Under*Lrg*Banner***END******/
 /************************/
 
+
+/************************/
+/***ADOPTION STEPS START***/
+#adoption_steps_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/***ADOPTION STEPS END*/
+/************************/
+
+
+/************************/
+/***MISSION START*/
+
+#mission_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.section_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+   
+}
+/*
+
+/***MISSION END*/
+/************************/
 
 
 
@@ -549,6 +589,18 @@ footer {
 
 /**how_to_adopt_puppy_grid****START********/
 /***Grid At Bottom Of Page Above Footer Column Grid***/
+#how_to_sponsor_container{
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7fafc;
+}
+
 .how_to_adopt_puppy_grid{
     display: grid;
     width: 100%;
@@ -564,13 +616,18 @@ footer {
     font-size: 18px;
     line-height: 35px;
     padding: 10px;
+    background-color: var(--card-bkgd);
 }
-.how_to_adopt_puppy_grid div{
+#how_to_adopt_puppy_grid div{
     height: 100%;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 20px;
+}
+
+.card p{
+    color: white;
 }
 
 .card1{
@@ -616,6 +673,24 @@ footer {
 }
 /**how_to_adopt_puppy_grid****END*****/
 /************************/
+
+/************************/
+/*STATEMENT CONTAINER START*/
+#statement_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+}
+
+/*STATEMENT CONTAINER END*/
+/************************/
+
 
 /************************/
 /**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid START*/
