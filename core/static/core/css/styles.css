@@ -295,28 +295,7 @@ main{
     justify-content: center;
 }
 
-.section_wrapper{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-    padding: 1rem;
-    margin: 0 auto;
-    background-color: #f7fafc;
-    border-radius: 0.75rem;
-    margin-top: .5rem; 
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-}
 
-.section_mission{
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    padding: 10px;
-}
 /*Homepage SECTION END*/
 /*******************/
 
@@ -371,6 +350,67 @@ main{
 /*******Grid*Under*Lrg*Banner***END******/
 /************************/
 
+
+/************************/
+/***ADOPTION STEPS START***/
+#adoption_steps_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/***ADOPTION STEPS END*/
+/************************/
+
+
+/************************/
+/***MISSION START*/
+
+#mission_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.section_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+   
+}
+/*
+
+/***MISSION END*/
+/************************/
 
 
 

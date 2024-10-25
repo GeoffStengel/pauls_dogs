@@ -95,7 +95,8 @@
 <div class="homepage_content_grid">
     
     <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->
-<section class="section_mission">       
+<section> 
+    <div id="mission_container">    
     <div class='home_description'>
         <div class="body_text1">    
             {% for text_body in all %}
@@ -107,12 +108,15 @@
             {% for text_body in all %} <p>{{ text_body.body_text2 }}</p> {% endfor %}
             <img class="body_text2_img" src="{{ all.0.body_text2_img.url }}" alt="Doggy Image">    
         </div>
+    </div>      
 </section>      
     <!--2nd-Large-Body-Of-Text-Also-Has-Image-END-->      
  
-</div>         
-<section>
-    <!-- Pet-Profiles-Section-START-->
+</div> 
+
+<!--
+<section>-->
+    <!-- Pet-Profiles-Section-START--><!--
     <div class="puppy_grid_6_img">
         {% for pet in six_pets %}
             <div class="puppy_item">
@@ -122,25 +126,27 @@
             </div>
         {% endfor %}
     </div>
-</section>    
+</section>    -->
                 <!-- Pet-Profiles-Section-END-->
 
 
     <!---How-To-Adopt-Puppy-Section-START-->
 <section>
-    <div class="adoption-steps">
-        <h2 class="text"></h2>
-        <ol>
-            <li>
-                <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
-            </li>
-            <li>
-                <span>📝</span> <strong>Complete the Application:</strong> Fill out an adoption application and provide references.
-            </li>
-            <li>
-                <span>🏠</span> <strong>Welcome Your New Friend:</strong> Prepare your home and schedule a vet visit.
-            </li>
-        </ol>
+    <div id="adoption_steps_container">
+        <div class="adoption-steps">
+            <h2 class="text"></h2>
+            <ol>
+                <li>
+                    <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
+                </li>
+                <li>
+                    <span>📝</span> <strong>Complete the Application:</strong> Fill out an adoption application and provide references.
+                </li>
+                <li>
+                    <span>🏠</span> <strong>Welcome Your New Friend:</strong> Prepare your home and schedule a vet visit.
+                </li>
+            </ol>
+        </div>
     </div>
 </section>  
 
