@@ -2,11 +2,11 @@
 
 {% block title %}<title>{{ title }}</title>{% endblock title %}
 
+{% block content %}  
 
+<h1 class="title_of_item_u_editing">{{ title }}</h1>
 
-{% block content %} 
-
-<h1 class="mb-6 text-3xl">{{ title }}</h1>
+<div id="edit_item_page_wrapper">
 
 <form method="post" action="." enctype="multipart/form-data">
     {% csrf_token %}
@@ -26,5 +26,6 @@
         {% endif %}
 
         <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
-</form>   
+</form>
+</div>   
 {% endblock content %}

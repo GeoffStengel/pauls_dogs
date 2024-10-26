@@ -1,13 +1,11 @@
 {% extends 'core/base.html' %}
 
-{% block title %}<title>New Conversation</title>{% endblock title %}
-
+{% block title %}
+    <title>New Conversation</title>
+{% endblock title %}
 
 {% block content %}
-
 <h1 class="mb-6 text text-3xl">New Conversation</h1>
-
-
 <form method="post" action=".">
     {% csrf_token %}
 
