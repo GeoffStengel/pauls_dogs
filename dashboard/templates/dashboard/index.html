@@ -1,31 +1,33 @@
-<!--index.html Main Page For Dashboard Landing Page-->
+<!--Main Page For Dashboard The Items Page also Items in URL -->
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}Dashboard{% endblock title %}
-<!--Content Block Blocks Other Content From base.html-->
+{% block title %}
+    <title>Dashboard</title>
+{% endblock title %}
 
 {% block content %}
-
-<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-    <h2 class="mb-12 text-2xl text-center">My items</h2>
-    
-    <div class="grid grid-cols-3 gap-3">
-        {% for item in items %}
-            <div>
-                <a href="{% url 'item:detail' item.id %}">
-                    <div>
-                        <img src="{{ item.image.url }}" class="rounded-t-xl">
-                    </div>
-
-                    <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class="text-2xl">{{ item.name }}</h2>
-                        <p class="text-gray-500">Price: {{ item.price }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+    <div id="dashboard_container">
+        <h2 class="my_items_text">My items</h2>
+        <!-- Item Card and Grid Img, Name, Item Details START -->
+        <section>
+        <div class="grid_holding_item_cards">
+            {% for item in items %}
+                <div id="individual_item_card_wrapper">
+                    <a href="{% url 'item:detail' item.id %}">
+                        <div class="solo_div_around_item_image">
+                            <img src="{{ item.image.url }}" class="item_profile_img">
+                        </div>
+                        <div class="text_wrapper_item_thumbnail">
+                            <h2 class="text-2xl">{{ item.name }}</h2>
+                            <p class="text-gray-500">Price: {{ item.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
+        </section>
+        <!-- Item Card and Grid Img, Name, Item Details END -->
     </div>
 
 {% endblock content %}

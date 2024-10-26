@@ -52,7 +52,7 @@
     </section>            
 
 
-    <section>
+    <section id="pets">
     <div class="section_wrapper ">   
         <h2 class="page_name_h2">Newest items</h2>
         
@@ -63,7 +63,6 @@
                     <div class="solo_div_around_item_image">
                         <img src="{{ item.image.url }}" class="item_profile_img">
                     </div>
-
                     <div class="p-6 bg-white rounded-b-xl">
                         <h2 class="text-2xl">{{ item.name }}</h2>
                         <p class="text-gray-500">Price: {{ item.price }}</p>
@@ -73,187 +72,163 @@
         {% endfor %}
         </div>
     </div>
-</section>
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center">Categories</h2>   
-        <div class="grid grid-cols-3 gap-3">
-            {% for category in categories %}
-            <div>
-                <a href="#">
-                    <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class="text-2xl">{{ category.name }}</h2>
-                        <p class="text-gray-500">{{ category.items.count }} items</p>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
+    </section>
+        <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+            <h2 class="mb-12 text-2xl text-center">Categories</h2>   
+            <div class="grid grid-cols-3 gap-3">
+                {% for category in categories %}
+                <div>
+                    <a href="#">
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ category.name }}</h2>
+                            <p class="text-gray-500">{{ category.items.count }} items</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>  
         </div>  
-    </div>  
-</section> 
+    </section> 
 
 
-<div class="homepage_content_grid">
-    
-    <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->
-<section id="about"> 
-    <div id="mission_container">    
-    <div class='home_description'>
-        <div class="body_text1">    
-            {% for text_body in all %}
-                <p>{{ text_body.body_text1 }}</p>
-            {% endfor %}
-                <img class="body_text1_img" src="{{ all.0.body_text1_img.url }}" alt="Doggy Image">
-        </div>
-        <div class="body_text2">
-            {% for text_body in all %} <p>{{ text_body.body_text2 }}</p> {% endfor %}
-            <img class="body_text2_img" src="{{ all.0.body_text2_img.url }}" alt="Doggy Image">    
-        </div>
-    </div>      
-</section>      
+    <div class="homepage_content_grid">
+
+        <!--2nd-Large-Body-Of-Text-Also-Has-Image-START-->
+    <section id="about"> 
+        <div id="mission_container">    
+        <div class='home_description'>
+            <div class="body_text1">    
+                {% for text_body in all %}
+                    <p>{{ text_body.body_text1 }}</p>
+                {% endfor %}
+                    <img class="body_text1_img" src="{{ all.0.body_text1_img.url }}" alt="Doggy Image">
+            </div>
+            <div class="body_text2">
+                {% for text_body in all %} <p>{{ text_body.body_text2 }}</p> {% endfor %}
+                <img class="body_text2_img" src="{{ all.0.body_text2_img.url }}" alt="Doggy Image">    
+            </div>
+        </div>      
+    </section>      
     <!--2nd-Large-Body-Of-Text-Also-Has-Image-END-->      
  
 </div> 
 
-<!--
-<section>-->
-    <!-- Pet-Profiles-Section-START--><!--
-    <div class="puppy_grid_6_img">
-        {% for pet in six_pets %}
-            <div class="puppy_item">
-                <img src="{{ pet.pet_prof_img.url }}" alt="Puppy Pic 1">
-                <p class="pet_name">{{ pet.name }}</p>
-                <p class="pet_title">{{ pet.title }}</p>
+    <!--
+    <section>-->
+        <!-- Pet-Profiles-Section-START--><!--
+        <div class="puppy_grid_6_img">
+            {% for pet in six_pets %}
+                <div class="puppy_item">
+                    <img src="{{ pet.pet_prof_img.url }}" alt="Puppy Pic 1">
+                    <p class="pet_name">{{ pet.name }}</p>
+                    <p class="pet_title">{{ pet.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>    -->
+                    <!-- Pet-Profiles-Section-END-->
+
+
+        <!---How-To-Adopt-Puppy-Section-START-->
+    <section>
+        <div id="adoption_steps_container">
+            <div class="adoption-steps">
+                <h2 class="text"></h2>
+                <ol>
+                    <li>
+                        <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
+                    </li>
+                    <li>
+                        <span>📝</span> <strong>Complete the Application:</strong> Fill out an adoption application and provide references.
+                    </li>
+                    <li>
+                        <span>🏠</span> <strong>Welcome Your New Friend:</strong> Prepare your home and schedule a vet visit.
+                    </li>
+                </ol>
             </div>
-        {% endfor %}
-    </div>
-</section>    -->
-                <!-- Pet-Profiles-Section-END-->
-
-
-    <!---How-To-Adopt-Puppy-Section-START-->
-<section>
-    <div id="adoption_steps_container">
-        <div class="adoption-steps">
-            <h2 class="text"></h2>
-            <ol>
-                <li>
-                    <span>🐾</span> <strong>Choose Your Pet:</strong> Research different breeds and visit local shelters.
-                </li>
-                <li>
-                    <span>📝</span> <strong>Complete the Application:</strong> Fill out an adoption application and provide references.
-                </li>
-                <li>
-                    <span>🏠</span> <strong>Welcome Your New Friend:</strong> Prepare your home and schedule a vet visit.
-                </li>
-            </ol>
+        </div>
+    </section>  
+    <!---How-To-Adopt-Puppy-Section-END-->
+    <!---How-To-SPONSOR START-->
+    <section>
+        <div id="how_to_sponsor_container">
+        <div class="how_to_adopt_puppy_grid">
+            <div class="card card1">
+                <p>Choose a Dog:</p>
+                <p>to Sponsor:</p>
+                <p><span>🐾</span> <strong> Browse through</strong>  our available dogs and select one to virtually adopt.</p>
+            </div>
+            <div class="card card2">    
+                <p>Monthly Sponsorship:</p>
+                <p>Commit to a monthly donation</p>
+                that directly supports the well-being of your chosen dog.
+            </div>
+            <div class="card card3">    
+                <p>Receive Updates:</p>
+                <p>You’ll get regular updates,</p>
+                photos, and progress reports on how your sponsored dog is doing.
+            </div> 
         </div>
     </div>
-</section>  
-
-
-    <script>
-        const div = document.querySelector(".text");
-        const text = "Three Steps to Adopting a Pet";
-
-        function textTypingEffect(element, text, i = 0) {
-            element.textContent += text(i);
-
-                if (i == text.length - 1) {
-                    return;
-                }
-
-                setTimeout(() => textTypingEffect(element, text, i + 1), 50);
-            }
-
-            textTypingEffect(div, text);
-        </script>
-
-<section>
-    <div id="how_to_sponsor_container">
-    <div class="how_to_adopt_puppy_grid">
-        <div class="card card1">
-            <p>Choose a Dog:</p>
-            <p>to Sponsor:</p>
-            <p><span>🐾</span> <strong> Browse through</strong>  our available dogs and select one to virtually adopt.</p>
+    </section>    
+    <!---How-To-SPONSOR END--> 
+    <!---STATEMENT CONTAINER START-->
+    <section>
+        <div id="statement_container">    
+        <h1>Pauls Dogs & Creatures</h1>
+            <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
+            </p>        
+            <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
+                Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
+            </p>
+            <p>
+                Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
+                Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
+            </p>
+            <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
+            </p>        
+            <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
+                Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
+            </p>
+            <p>
+                Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
+                Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
+            </p>
         </div>
-        <div class="card card2">    
-            <p>Monthly Sponsorship:</p>
-            <p>Commit to a monthly donation</p>
-            that directly supports the well-being of your chosen dog.
+    </section>
+    <!---STATEMENT CONTAINER END--> 
+    <!---SPONSOR_GRID-START-->
+    <section>
+        <div class="sponsor_grid">
+            <div class="thank_U_sponsors_img">
+                <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
+            </div>
+            <div class="sponsor_logos_grid">
+                <div class="box box1">
+                    <img  src="{{ all.0.sponsor_01_img.url }}">
+                </div>
+                <div class="box box2">
+                    <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
+                </div>
+                <div class="box box3">
+                    <img src="{{ all.0.sponsor_03_img.url }}">
+                </div>
+                <div class="box box4">    
+                    <img src="{{ all.0.sponsor_04_img.url }}">
+                </div>
+                <div class="box box5">        
+                    <img src="{{ all.0.sponsor_05_img.url }}">
+                </div>    
+                <div class="box box6">    
+                    <img src="{{ all.0.sponsor_06_img.url }}">
+                </div>    
+                <div class="box box7">        
+                    <img src="{{ all.0.sponsor_07_img.url }}">
+                </div>    
+            </div>
         </div>
-        <div class="card card3">    
-            <p>Receive Updates:</p>
-            <p>You’ll get regular updates,</p>
-            photos, and progress reports on how your sponsored dog is doing.
-        </div> 
-    </div>
-</div>
-</section>    
-<!---How-To-Adopt-Puppy-Section-END-->
-<!---->
-
-
-<section>
-    <div id="statement_container">    
-    <h1>Pauls Dogs & Creatures</h1>
-        <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
-        </p>        
-        <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
-            Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
-        </p>
-        <p>
-            Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
-            Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
-        </p>
-        <p>Wafer gummies gummi bears pastry pie shortbread chupa chups cake chocolate cake. Chocolate cake cake bear claw biscuit oat cake shortbread jelly. Gingerbread icing pudding cake croissant powder. Cake jelly beans carrot cake fruitcake jelly-o chocolate cake.
-        </p>        
-        <p>Carrot cake jelly sweet roll chocolate bar jujubes jelly-o cake marshmallow. Jelly beans powder cake biscuit pie tootsie roll apple pie. Bonbon bonbon cotton candy candy gummies danish.
-            Sweet pastry dragée cake sweet roll jelly croissant cake ice cream. Sweet roll cake candy jelly marshmallow lollipop sugar plum toffee. Jujubes toffee lollipop cake jelly beans dragée. Sesame snaps biscuit oat cake gummies tootsie roll.
-        </p>
-        <p>
-            Pastry apple pie ice cream carrot cake candy canes cookie jujubes. Biscuit jujubes donut wafer sugar plum liquorice cupcake jelly-o. Bear claw sweet roll cake candy pudding shortbread cookie.
-            Sweet oat cake gingerbread dragée donut tiramisu powder carrot cake. Sesame snaps jelly beans croissant chocolate dragée jelly lollipop. Halvah fruitcake cupcake pastry jelly caramels tootsie roll jujubes chocolate. Tiramisu sweet dessert cake cheesecake gingerbread chocolate cake. 
-        </p>
-    
-    </div>
-    </section> 
-
-
-<!---->
-<!---SPONSOR_GRID-START-->
-<section>
-    <div class="sponsor_grid">
-        <div class="thank_U_sponsors_img">
-            <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
-        </div>
-        <div class="sponsor_logos_grid">
-            <div class="box box1">
-                <img  src="{{ all.0.sponsor_01_img.url }}">
-            </div>
-            <div class="box box2">
-                <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
-            </div>
-            <div class="box box3">
-                <img src="{{ all.0.sponsor_03_img.url }}">
-            </div>
-            <div class="box box4">    
-                <img src="{{ all.0.sponsor_04_img.url }}">
-            </div>
-            <div class="box box5">        
-                <img src="{{ all.0.sponsor_05_img.url }}">
-            </div>    
-            <div class="box box6">    
-                <img src="{{ all.0.sponsor_06_img.url }}">
-            </div>    
-            <div class="box box7">        
-                <img src="{{ all.0.sponsor_07_img.url }}">
-            </div>    
-        </div>
-    </div>
-</section>
-<!---SPONSOR_GRID-END-->
-<!---->
-
+    </section>
+    <!---SPONSOR_GRID-END-->
         </div>         
     </div>  
 </div>
