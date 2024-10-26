@@ -113,7 +113,6 @@ header{
     cursor: pointer;
     margin-right: auto;
     margin-left: 20px;
-    
 }
 
 #nav-links li{
@@ -513,6 +512,10 @@ footer {
     justify-content: space-between;
     align-items: center; 
 }
+.authorized_btn_container a:hover{
+    color: #0088a9;
+}
+
 .authorized_profile_btns{
     color: var(--text-secondary);
     font: 16px;
