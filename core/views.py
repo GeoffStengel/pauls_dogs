@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.conf import settings
 from django.http import HttpResponse
 from .models import HomePage, PetProfile, AboutPage, PrivacyPage, TermsPage
@@ -79,7 +80,7 @@ def terms(request):
 
 
 
-
+"""
 def index(request):
     items = Item.objects.filter(is_sold=False)[0:6]
     categories = Category.objects.all()
@@ -88,7 +89,7 @@ def index(request):
         'categories': categories,
         'items': items,
     })
-
+"""
  
 def signup(request):
     if request.method == 'POST':
@@ -96,8 +97,9 @@ def signup(request):
 
         if form.is_valid():
             form.save()
-
-            return redirect('/login/')
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Success! Account Created! Please log in, {username}')
+            return redirect('core:login')
     else:
         form = SignupForm()
 

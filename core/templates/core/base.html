@@ -64,6 +64,7 @@
                 {% if request.user.is_authenticated %}
                     <a href="{% url 'conversation:inbox' %}" class="authorized_profile_btns">Inbox</a>
                     <a href="{% url 'dashboard:index' %}" class="authorized_profile_btns">Dashboard</a>
+                    <a href="{% url 'core:logout' %}" class="authorized_profile_btns">Logout</a>
                 {% else %}
                     <a href="{% url 'core:signup' %}" class="signup_btn">Sign up</a>
                     <a href="{% url 'core:login' %}" class="login_btn">Log in</a>

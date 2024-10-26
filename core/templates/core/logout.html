@@ -1,0 +1,17 @@
+{% {% extends "core/base.html" %}%}
+
+{% load static %}
+
+{% block title %}<title>Logout</title>{% endblock %}
+
+{% block content %}
+    <h1 class="mb-6 text-3xl">Logout</h1>
+
+    <p>Are you sure you want to logout?</p>
+
+    <form method="post" action="{% url 'core:logout' %}">
+        {% csrf_token %}
+
+        <button class="py-4 px-8 text-lg bg-red-500 hover:bg-red-700 rounded-xl text-white">Logout</button>
+    </form>
+{% endblock %}
