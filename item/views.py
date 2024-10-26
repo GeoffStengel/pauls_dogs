@@ -31,7 +31,8 @@ def detail(request, pk):
 
     return render(request, 'item/detail.html', {
         'item': item,
-        'related_items': related_items
+        'related_items': related_items,
+        'default_image': settings.DEFAULT_IMAGE_PATH,
     })
 
 @login_required
@@ -51,6 +52,7 @@ def new(request):
     return render(request, 'item/form.html', {
         'form': form,
         'title': 'New item',
+        'default_image': settings.DEFAULT_IMAGE_PATH,
     })
 
 @login_required
@@ -70,6 +72,7 @@ def edit(request, pk):
     return render(request, 'item/form.html', {
         'form': form,
         'title': 'Edit item',
+        'default_image': settings.DEFAULT_IMAGE_PATH,
     })
 
 @login_required

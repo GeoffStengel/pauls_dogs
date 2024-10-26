@@ -7,7 +7,7 @@
 <section>
 <div class="item_img_desc_title_grid">
     <div class="item_detail_image">
-        <img src="{{ item.image.url }}" class="rounded-xl">
+        <img src="{{ item.image.url|default:default_image }}" class="item_profile_img" alt="Item Image">
     </div>
 
     <div class="item_detail_info_grid">
