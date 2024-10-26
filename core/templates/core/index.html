@@ -102,7 +102,9 @@
                 {% for text_body in all %}
                     <p>{{ text_body.body_text1 }}</p>
                 {% endfor %}
-                    <img class="body_text1_img" src="{{ all.0.body_text1_img.url }}" alt="Doggy Image">
+                    <img class="body_text1_img" src="{{ all.0.body_text1_img.url|default:default_image }}" alt="Doggy Image">
+
+                    
             </div>
             <div class="body_text2">
                 {% for text_body in all %} <p>{{ text_body.body_text2 }}</p> {% endfor %}
