@@ -10,7 +10,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEFAULT_IMAGE_PATH = 'images/default.jpg' 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -121,6 +121,7 @@ if ENVIRONMENT_CONDITION == 'development':
     MEDIA_ROOT = BASE_DIR / 'media'
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     DEBUG = os.environ.get('DEBUG_DEVELOPMENT', 'True') == 'True'
+    DEFAULT_IMAGE_PATH = 'images/default.jpg'
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -147,6 +148,7 @@ elif ENVIRONMENT_CONDITION == 'production':
     # AWS S3 storage for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_IMAGE_PATH = 'images/default.jpg'
     DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.conf import settings
 from django.http import HttpResponse
 from .models import HomePage, PetProfile, AboutPage, PrivacyPage, TermsPage
 from item.models import Category, Item
@@ -25,6 +26,7 @@ def home(request):
         'six_pets': six_pet_prof,
         'categories': categories,
         'items': items,
+        'default_image': settings.DEFAULT_IMAGE_PATH,
     }
 
     return render(request, 'core/index.html', context)

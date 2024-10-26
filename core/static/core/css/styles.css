@@ -719,8 +719,8 @@ footer {
 }
 
 .card {
-    display: grid;
-    height: 100%;
+    display: flex;
+    height:200px;
     color: white;
     border-radius: 20px;
 }

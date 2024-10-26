@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
-
+from django.conf import settings
 from .forms import NewItemForm, EditItemForm
 from .models import Category, Item
  
@@ -21,7 +21,8 @@ def items(request):
         'items': items,
         'query': query,
         'categories': categories,
-        'category_id': int(category_id)
+        'category_id': int(category_id),
+        'default_image': settings.DEFAULT_IMAGE_PATH,
     })
 
 def detail(request, pk):
