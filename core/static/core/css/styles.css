@@ -720,13 +720,12 @@ footer {
 
 .card {
     display: flex;
-    height:200px;
+    flex-direction: column;
+    height: 300px;
     color: white;
     border-radius: 20px;
 }
-.card p{
-    line-height: 20px;
-}
+
 .card1{
     background-image: url(https://cdn.pixabay.com/photo/2024/06/15/11/05/ai-generated-8831464_640.jpg);
     background-size: cover;

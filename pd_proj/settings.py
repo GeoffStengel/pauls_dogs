@@ -28,8 +28,8 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 #DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT = '/'
-LOGOUT_REDIRECT = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 INSTALLED_APPS = [
