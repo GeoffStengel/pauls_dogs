@@ -73,7 +73,7 @@
                     <li><a href="{% url 'dashboard:index' %}" class="nav-buttons">Dashboard</a></li>
                     <form method="post" action="{% url 'core:logout' %}" style="display: inline;">
                         {% csrf_token %}
-                        <button type="submit" class="nav-buttons">Logout</button>
+                        <li><button type="submit" class="nav-buttons">Logout</button></li>
                     </form>
                 {% else %}
                     <li><a href="{% url 'core:signup' %}" class="nav-buttons">Sign up</a></li>

@@ -1010,9 +1010,23 @@ footer {
     }
 }
 @media screen and (max-width: 1194px){
+
+#logo{
+    cursor: pointer;
+    position: absolute; /* Position the logo absolutely */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for true center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /**********************************/
     /*****Hamburger START*************/
 nav {
-    position: relative;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
 }
 
 img.logo {
@@ -1036,7 +1050,6 @@ img.logo {
     height: 30px;
   /*  position: relative; */
     margin: 10px;
-
     position: fixed; /* Use fixed positioning */
     top: 10px; /* Distance from the top */
     right: 10px; /* Distance from the right */
