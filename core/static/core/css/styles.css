@@ -406,6 +406,8 @@ main{
     padding-bottom: 1.5rem;
 }
 
+
+
 .section_wrapper{
     display: grid;
     grid-template-columns: 1fr;
@@ -415,11 +417,8 @@ main{
     margin: 0 auto;
     background-color: #f7fafc;
     border-radius: 0.75rem;
-    margin-top: .5rem; 
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
+    min-height: 100%;
 }
 
 /***MISSION END*/
@@ -558,13 +557,14 @@ footer {
 .grid_holding_item_cards{
     display: grid;
     height: auto;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
-    grid-template-rows: repeat(auto-fill, minmax(380px, 380px));
-    gap: 3%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-rows: repeat(auto-fill, minmax(380px, 385px));
+    gap: 50px;
     padding: 1rem;
     background-color: var( --bkgd-color);
     border-radius: 20px;
-    justify-content: space-evenly;
+    justify-items: space-evenly;
+    
 }
 
 .item_sidebar_section_name{
@@ -592,7 +592,7 @@ footer {
 }
 
 .item_profile_img{
-    width: 100%;
+    width: 250px;
     height: 250px;
     object-fit: cover;
     /*border-radius: 10px; */
@@ -608,9 +608,9 @@ footer {
 }
 
 #individual_item_card_wrapper{
-    display: grid;
-    grid-template-columns: 250px;
-    grid-template-rows: 1fr;
+    display: flex;
+    width: 265px;
+    height: 380px;
     gap: 1rem;
     border-radius: 1rem;
     justify-content: center;
