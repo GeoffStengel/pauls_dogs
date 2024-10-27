@@ -16,7 +16,7 @@ class Category(models.Model):
 class Item(models.Model):
     category = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
     name= models.CharField(max_length=50)
-    description = models.TextField(blank=False, null=False, max_length=250)
+    description = models.TextField(blank=False, null=False, max_length=100)
     price = models.FloatField()
     image = models.ImageField(upload_to='item_profile_imgs/', blank=False, null=False)
     is_sold = models.BooleanField(default=False)

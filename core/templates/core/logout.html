@@ -7,11 +7,15 @@
 {% block content %}
     <h1 class="mb-6 text-3xl">Logout</h1>
 
-    <p>Are you sure you want to logout?</p>
+    <h2>You have been logged out</h2>
+   
 
-    <form method="post" action="{% url 'core:logout' %}">
-        {% csrf_token %}
 
-        <button class="py-4 px-8 text-lg bg-red-500 hover:bg-red-700 rounded-xl text-white">Logout</button>
-    </form>
-{% endblock %}
+
+
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'core:login' %}">Log In Again</a>
+        </small>
+    </div>
+{% endblock content  %}

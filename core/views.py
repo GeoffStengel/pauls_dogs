@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from .models import HomePage, PetProfile, AboutPage, PrivacyPage, TermsPage
 from item.models import Category, Item
 from .forms import SignupForm
+from django.contrib.auth import logout
 
 
 def home(request):
@@ -79,17 +80,6 @@ def terms(request):
     return render(request, 'core/terms_of_use.html', context)
 
 
-
-"""
-def index(request):
-    items = Item.objects.filter(is_sold=False)[0:6]
-    categories = Category.objects.all()
-
-    return render(request, 'core/index.html', {
-        'categories': categories,
-        'items': items,
-    })
-"""
  
 def signup(request):
     if request.method == 'POST':
@@ -106,3 +96,4 @@ def signup(request):
     return render(request, 'core/signup.html', {
         'form': form
     })
+
