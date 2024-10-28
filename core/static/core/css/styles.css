@@ -141,6 +141,13 @@ button:hover{
 h1 {
     font-size: 1.8rem;
 }
+
+.donate_btn{
+    height: 40px;
+    border-radius: 20px;
+    padding: 9px 15px;
+    background: var(--accent-color);
+}
 /*HEADER STYLING END*/
 /*******************/
 
@@ -913,7 +920,6 @@ footer {
 
 /*******************/
 /*DASHBOARD START*/
-
 #dashboard_container{
     margin-top: 1.5rem;
     padding-left: 1.5rem;
@@ -938,7 +944,6 @@ footer {
 
 /*EDIT ITEM PAGE START*/
 /*******************/
-
 #edit_item_page_wrapper{
     display: grid;
     grid-template-columns: 1fr;
@@ -961,34 +966,6 @@ footer {
 }
 /*EDIT ITEM PAGE END*/
 /*******************/
-
-
-/*******************/
-/*Message alerts for logout START*/
-.messages {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: auto;
-    max-width: 80%;
-    text-align: center;
-}
-
-.message {
-    display: inline-block;
-    background-color: #4caf50; /* Green background */
-    color: white; /* White text */
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-/*Message alerts for logout END*/
-/*******************/
-
 
 /*******************/
 /*MEDIA QUERIES START*/
@@ -1082,9 +1059,9 @@ img.logo {
 .nav-links {
     display: none;
     position: absolute;
-  /*  top: 50px; 
-    left: 0; */
-    background-color: #fff;
+    top: 50px; 
+    right: 0;
+    background-color: var(--bg-primary);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;

@@ -141,6 +141,13 @@ button:hover{
 h1 {
     font-size: 1.8rem;
 }
+
+.donate_btn{
+    height: 40px;
+    border-radius: 20px;
+    padding: 9px 15px;
+    background: var(--accent-color);
+}
 /*HEADER STYLING END*/
 /*******************/
 
@@ -406,6 +413,8 @@ main{
     padding-bottom: 1.5rem;
 }
 
+
+
 .section_wrapper{
     display: grid;
     grid-template-columns: 1fr;
@@ -415,11 +424,8 @@ main{
     margin: 0 auto;
     background-color: #f7fafc;
     border-radius: 0.75rem;
-    margin-top: .5rem; 
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
+    min-height: 100%;
 }
 
 /***MISSION END*/
@@ -484,7 +490,7 @@ footer {
 
 .frame_around_search_sidebar{
     display: flex;
-    width: 280px;
+    width: 100%;
     gap: 1rem;
     padding: 16px;
     margin: 0 auto;
@@ -496,11 +502,12 @@ footer {
 }
 
 .form_grid_and_formBtns{
-    max-width: 250px;
-    max-height: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: .5rem;
+    width: 200px;
+    max-height: 100%;
+    /*display: grid;
+    grid-template-columns: 1fr; */
+    gap: 10px;
     padding: 1rem;
     background-color: var(--bg-primary);
     border-radius: 20px;
@@ -558,13 +565,15 @@ footer {
 .grid_holding_item_cards{
     display: grid;
     height: auto;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 275px));
-    grid-template-rows: repeat(auto-fill, minmax(380px, 380px));
-    gap: 3%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-rows: repeat(auto-fill, minmax(380px, 385px));
+    gap: 50px;
     padding: 1rem;
     background-color: var( --bkgd-color);
     border-radius: 20px;
-    justify-content: space-evenly;
+    justify-items: space-evenly;
+    justify-content: center;
+    
 }
 
 .item_sidebar_section_name{
@@ -592,7 +601,7 @@ footer {
 }
 
 .item_profile_img{
-    width: 100%;
+    width: 250px;
     height: 250px;
     object-fit: cover;
     /*border-radius: 10px; */
@@ -608,9 +617,9 @@ footer {
 }
 
 #individual_item_card_wrapper{
-    display: grid;
-    grid-template-columns: 250px;
-    grid-template-rows: 1fr;
+    display: flex;
+    width: 265px;
+    height: 380px;
     gap: 1rem;
     border-radius: 1rem;
     justify-content: center;
@@ -719,12 +728,13 @@ footer {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 270px));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 450px));
-    gap: 10%;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: repeat(auto);
+    gap: 20px;
     margin: 0 auto;
     align-content: center;
     justify-content: center;
+    justify-items: center;
     text-align: center;
     border-radius: 20px;
     font-size: 18px;
@@ -733,20 +743,16 @@ footer {
     border-radius: 20px;
     background-color: var(--card-bkgd);
 }
-#how_to_adopt_puppy_grid div{
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-}
+
 
 .card {
     display: flex;
+    width: 260px;
+    height: 400px;
     flex-direction: column;
-    height: 300px;
     color: white;
     border-radius: 20px;
+    justify-content: center;
 }
 
 .card1{
@@ -914,7 +920,6 @@ footer {
 
 /*******************/
 /*DASHBOARD START*/
-
 #dashboard_container{
     margin-top: 1.5rem;
     padding-left: 1.5rem;
@@ -939,7 +944,6 @@ footer {
 
 /*EDIT ITEM PAGE START*/
 /*******************/
-
 #edit_item_page_wrapper{
     display: grid;
     grid-template-columns: 1fr;
@@ -963,34 +967,6 @@ footer {
 /*EDIT ITEM PAGE END*/
 /*******************/
 
-
-/*******************/
-/*Message alerts for logout START*/
-.messages {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: auto;
-    max-width: 80%;
-    text-align: center;
-}
-
-.message {
-    display: inline-block;
-    background-color: #4caf50; /* Green background */
-    color: white; /* White text */
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-/*Message alerts for logout END*/
-/*******************/
-
-
 /*******************/
 /*MEDIA QUERIES START*/
 /*******************/
@@ -1009,7 +985,7 @@ footer {
         scale: 1;
     }
 }
-@media screen and (max-width: 1194px){
+@media screen and (max-width: 1224px){
 
 #logo{
     cursor: pointer;
@@ -1083,9 +1059,9 @@ img.logo {
 .nav-links {
     display: none;
     position: absolute;
-  /*  top: 50px; 
-    left: 0; */
-    background-color: #fff;
+    top: 50px; 
+    right: 0;
+    background-color: var(--bg-primary);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
@@ -1147,19 +1123,61 @@ img.logo {
     transform: rotate(-45deg) translate(7px, -6px); /* Adjusted for better X shape */
  }
 }
-
 /* Initially hide the hamburger button */
-@media screen and (min-width: 1195px) {
+@media screen and (min-width: 1225px) {
     .hamburger {
         display: none; /* Hide hamburger button */
     }
 }
     /**NAV*BAR*END**/
 
+@media only screen and (max-width: 900px) {
+.home_description {
+    height: 100%;
+    grid-template-columns:1fr;
+    grid-gap: 20px;
+    padding: 40px; 
+    margin: 10px auto;
+}
 
+}
 
+@media only screen and (max-width: 740px) {
+.sponsor_grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin:0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    grid-gap: 10px;
+ 
+}
+}
 
+  @media only screen and (max-width: 665px) {
 
+    /**Browse Page*START**/
+.form_grid_and_formBtns{
+    display: none;
+}
+#main_wrapper_items_page{
+    display: grid;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+    gap: 2rem;
+    margin:0 auto;
+}
+ /**Browse Page*END**/
+
+  }
 
 /*Small Screens for bottom icon bar*/
 @media only screen and (max-width: 600px) {

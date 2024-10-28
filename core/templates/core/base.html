@@ -60,7 +60,7 @@
                 <li><a class="nav-buttons" href="/#about">About</a></li>
                 <li><a class="nav-buttons" href="/#pets">Pets</a></li>
                 <li><a class="nav-buttons" href="{% url 'core:home-contact' %}">Contact</a></li>
-                <li><a class="nav-buttons" href="{{ homepage.donation_button }}">Donate</a></li>
+               <!-- <li><a class="nav-buttons" href="{{ homepage.donation_button }}">Donate</a></li> -->
                 <li><a class="nav-buttons" href="{% url 'item:items' %}">Browse</a></li>
                 <li><a class="nav-buttons" href="{% url 'item:new' %}">New item</a></li>
             
@@ -79,7 +79,7 @@
                     <li><a href="{% url 'core:signup' %}" class="nav-buttons">Sign up</a></li>
                     <li><a href="{% url 'core:login' %}" class="nav-buttons">Log in</a></li>
                 {% endif %}
-                <a class="nav-buttons" href="{{ homepage.donation_button }}">Donate</a>
+                    <a class="donate_btn nav-buttons" href="{{ homepage.donation_button }}">Donate</a>
             </ul>    
            
         </nav>
