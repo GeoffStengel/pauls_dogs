@@ -1,18 +1,25 @@
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 import dj_database_url
 import django_heroku
+from dotenv import load_dotenv
 
-load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env_path = os.path.join(BASE_DIR, '.env')
 
+print(f".env file exists: {os.path.isfile(env_path)}")  # Checks if the file exists
+print(f".env file path: {env_path}")                    # Outputs the path being checked
 
+load_dotenv(dotenv_path=env_path)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+
+# Debugging statement to check if the environment variables are loaded
+print(f"ENVIRONMENT_CONDITIONS (before): {os.environ.get('ENVIRONMENT_CONDITIONS')}")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -24,7 +31,7 @@ ADMIN_URL = os.environ.get('ADMIN')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -75,10 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pd_proj.wsgi.application'
 
-
-
-
-
 #Password Validators
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -106,13 +109,16 @@ USE_TZ = True
 
 
 # Environment-based Static/Media File Handling
-ENVIRONMENT_CONDITION = os.environ.get('ENVIRONMENT_CONDITION', 'development')
+ENVIRONMENT_CONDITIONS = os.environ.get('ENVIRONMENT_CONDITIONS', 'development')
 
-print(f"ENVIRONMENT_CONDITION: {ENVIRONMENT_CONDITION}")
+
+print(f"ENVIRONMENT_CONDITIONS: {ENVIRONMENT_CONDITIONS}")
+
 
 DEFAULT_IMAGE_PATH = 'media/default.jpg' 
 
-if ENVIRONMENT_CONDITION == 'development':
+if ENVIRONMENT_CONDITIONS == 'development':
+    print("Running in development mode")
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
@@ -130,7 +136,8 @@ if ENVIRONMENT_CONDITION == 'development':
         }
     }
     print('dohick')
-elif ENVIRONMENT_CONDITION == 'production':
+elif ENVIRONMENT_CONDITIONS == 'production':
+    print("Running in production mode")
     # Use S3 in production
     DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
@@ -159,7 +166,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
-print(ENVIRONMENT_CONDITION)
+print(ENVIRONMENT_CONDITIONS)
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
 
