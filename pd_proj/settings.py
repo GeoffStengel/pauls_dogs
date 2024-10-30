@@ -6,20 +6,16 @@ import django_heroku
 from dotenv import load_dotenv
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env_path = os.path.join(BASE_DIR, '.env')
+#env_path = os.path.join(BASE_DIR, '.env')
 
-print(f".env file exists: {os.path.isfile(env_path)}")  # Checks if the file exists
-print(f".env file path: {env_path}")                    # Outputs the path being checked
 
-load_dotenv(dotenv_path=env_path)
+#load_dotenv(dotenv_path=env_path)
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# Debugging statement to check if the environment variables are loaded
-print(f"ENVIRONMENT_CONDITIONS (before): {os.environ.get('ENVIRONMENT_CONDITIONS')}")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -112,13 +108,9 @@ USE_TZ = True
 ENVIRONMENT_CONDITIONS = os.environ.get('ENVIRONMENT_CONDITIONS', 'development')
 
 
-print(f"ENVIRONMENT_CONDITIONS: {ENVIRONMENT_CONDITIONS}")
-
-
 DEFAULT_IMAGE_PATH = 'media/default.jpg' 
 
 if ENVIRONMENT_CONDITIONS == 'development':
-    print("Running in development mode")
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
@@ -137,7 +129,6 @@ if ENVIRONMENT_CONDITIONS == 'development':
     }
     print('dohick')
 elif ENVIRONMENT_CONDITIONS == 'production':
-    print("Running in production mode")
     # Use S3 in production
     DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
