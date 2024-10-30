@@ -7,7 +7,7 @@
 <section>
 <div class="item_img_desc_title_grid">
     <div class="item_detail_image">
-        <img src="{{ item.image.url|default:default_image }}" class="item_profile_img" alt="Item Image">
+        <img src="{{ item.image.url }}" class="item_profile_img" alt="Item Image">
     </div>
 
     <div id="item_detail_info_container">
@@ -46,7 +46,7 @@
             <div id="individual_item_card_wrapper">
                 <a href="{% url 'item:detail' item.id %}">
                     <div>
-                        <img class="item_profile_img" src="{{ item.image.url|default:default_image }}">
+                        <img class="item_profile_img" src="{{ item.image.url }}">
                     </div>
 
                     <div class="p-6 bg-white rounded-b-xl">
