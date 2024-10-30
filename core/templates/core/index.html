@@ -61,7 +61,7 @@
             <div id="individual_item_card_wrapper">
                 <a href="{% url 'item:detail' item.id %}">
                     <div class="solo_div_around_item_image">
-                        <img src="{{ item.image.url|default:default_image }}" class="item_profile_img" alt="Item Image">
+                        <img src="{{ item.image.url|default:default_image_path }}" class="item_profile_img" alt="Item Image">
                     </div>
                     <div class="p-6 bg-white rounded-b-xl">
                         <h2 class="text-2xl">{{ item.name }}</h2>
@@ -101,7 +101,7 @@
                 {% for text_body in all %}
                     <p>{{ text_body.body_text1 }}</p>
                 {% endfor %}
-                    <img class="body_text1_img" src="{{ all.0.body_text1_img.url|default:default_image }}" alt="Doggy Image">
+                    <img class="body_text1_img" src="{{ all.0.body_text1_img.url }}" alt="Doggy Image">
 
                     
             </div>
@@ -203,29 +203,29 @@
     <section>
         <div class="sponsor_grid">
             <div class="thank_U_sponsors_img">
-                <img src="{{ all.0.lrg_sponsor_img.url|default:default_image }}" alt="Large sponsor image">
+                <img src="{{ all.0.lrg_sponsor_img.url }}" alt="Large sponsor image">
             </div>
             <div class="sponsor_logos_grid">
                 <div class="box box1">
-                    <img  src="{{ all.0.sponsor_01_img.url|default:default_image }}">
+                    <img  src="{{ all.0.sponsor_01_img.url }}">
                 </div>
                 <div class="box box2">
-                    <img src="{{ all.0.sponsor_02_img.url|default:default_image }}" alt="petsmart logo">
+                    <img src="{{ all.0.sponsor_02_img.url }}" alt="petsmart logo">
                 </div>
                 <div class="box box3">
-                    <img src="{{ all.0.sponsor_03_img.url|default:default_image }}">
+                    <img src="{{ all.0.sponsor_03_img.url }}">
                 </div>
                 <div class="box box4">    
-                    <img src="{{ all.0.sponsor_04_img.url|default:default_image }}">
+                    <img src="{{ all.0.sponsor_04_img.url }}">
                 </div>
                 <div class="box box5">        
-                    <img src="{{ all.0.sponsor_05_img.url|default:default_image }}">
+                    <img src="{{ all.0.sponsor_05_img.url }}">
                 </div>    
                 <div class="box box6">    
-                    <img src="{{ all.0.sponsor_06_img.url|default:default_image }}">
+                    <img src="{{ all.0.sponsor_06_img.url }}">
                 </div>    
                 <div class="box box7">        
-                    <img src="{{ all.0.sponsor_07_img.url|default:default_image }}">
+                    <img src="{{ all.0.sponsor_07_img.url }}">
                 </div>    
             </div>
         </div>
