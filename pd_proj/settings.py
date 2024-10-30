@@ -108,6 +108,8 @@ USE_TZ = True
 # Environment-based Static/Media File Handling
 ENVIRONMENT_CONDITION = os.environ.get('ENVIRONMENT_CONDITION', 'development')
 
+print(f"ENVIRONMENT_CONDITION: {ENVIRONMENT_CONDITION}")
+
 DEFAULT_IMAGE_PATH = 'media/default.jpg' 
 
 if ENVIRONMENT_CONDITION == 'development':
