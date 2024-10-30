@@ -941,6 +941,22 @@ footer {
 /*DASHBOARD END*/
 /*******************/
 
+/*Signup Form Page START*/
+/*******************/
+
+.signup_form_wrapper{
+    width: 50%; /* w-1/2 */
+    margin-top: 1.5rem; /* my-6 */
+    margin-bottom: 1.5rem; /* my-6 */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    padding: 1.5rem; /* p-6 */
+    background-color: #f7fafc; /* bg-gray-100 */
+    border-radius: 0.75rem;
+}
+
+/*Signup Form Page END*/
+/*******************/
 
 /*EDIT ITEM PAGE START*/
 /*******************/
@@ -1179,6 +1195,10 @@ img.logo {
 
   }
 
+  @media only screen and (max-width: 625px) {
+
+}
+
 /*Small Screens for bottom icon bar*/
 @media only screen and (max-width: 600px) {
     .aside {
@@ -1199,6 +1219,16 @@ img.logo {
     main {
         margin: 0;
     }
+
+
+.signup_form_wrapper{
+    width: 90%; 
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto; 
+    margin-right: auto;
+    padding: 1.5rem;
+}
   
 }
 

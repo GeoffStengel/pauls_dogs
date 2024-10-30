@@ -10,7 +10,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEFAULT_IMAGE_PATH = 'images/default.jpg' 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -109,6 +108,7 @@ USE_TZ = True
 # Environment-based Static/Media File Handling
 ENVIRONMENT_CONDITION = os.environ.get('ENVIRONMENT_CONDITION', 'development')
 
+DEFAULT_IMAGE_PATH = 'media/default.jpg' 
 
 if ENVIRONMENT_CONDITION == 'development':
     # Development settings for static and media files
@@ -121,7 +121,6 @@ if ENVIRONMENT_CONDITION == 'development':
     MEDIA_ROOT = BASE_DIR / 'media'
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     DEBUG = os.environ.get('DEBUG_DEVELOPMENT', 'True') == 'True'
-    DEFAULT_IMAGE_PATH = 'images/default.jpg'
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -137,7 +136,6 @@ elif ENVIRONMENT_CONDITION == 'production':
     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_FILE_OVERWRITE = False  # Prevent file overwrites
-    #AWS_DEFAULT_ACL = None         # No ACLs for security
     AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', 'public-read')
     AWS_QUERYSTRING_AUTH = False   # Simplify URLs
 
@@ -148,9 +146,9 @@ elif ENVIRONMENT_CONDITION == 'production':
     # AWS S3 storage for static and media files
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    DEFAULT_IMAGE_PATH = 'images/default.jpg'
+
     DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
     print('hickleberry')
 # Default Primary Key Field Type

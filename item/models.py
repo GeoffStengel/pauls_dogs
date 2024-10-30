@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.templatetags.static import static
+from django.conf import settings
 
 # Create your models here.
 class Category(models.Model):
@@ -15,10 +16,10 @@ class Category(models.Model):
     
 class Item(models.Model):
     category = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
-    name= models.CharField(max_length=50)
+    name= models.CharField(max_length=30)
     description = models.TextField(blank=False, null=False, max_length=100)
     price = models.FloatField()
-    image = models.ImageField(upload_to='item_profile_imgs/', blank=False, null=False)
+    image = models.ImageField(upload_to='item_profile_imgs/',blank=True, null=True, default=settings.DEFAULT_IMAGE_PATH)
     is_sold = models.BooleanField(default=False)
     created_by = models.ForeignKey(User, related_name='items', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
