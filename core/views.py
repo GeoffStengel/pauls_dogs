@@ -27,7 +27,6 @@ def home(request):
         'six_pets': six_pet_prof,
         'categories': categories,
         'items': items,
-        'default_image_path': settings.DEFAULT_IMAGE_PATH,
     }
 
     return render(request, 'core/index.html', context)
