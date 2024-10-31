@@ -1,4 +1,4 @@
-
+import logging
 import os
 from pathlib import Path
 import dj_database_url
@@ -142,8 +142,11 @@ elif ENVIRONMENT_CONDITIONS == 'production':
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
     # AWS S3 storage for static and media files
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'pd_proj.storage.custom_storage.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'pd_proj.storage.custom_storage.MediaStorage'
+
 
     # Additional settings (optional)
     #AWS_S3_OBJECT_PARAMETERS = {
@@ -161,6 +164,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AWS Region setting
 AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
+
+logging.basicConfig(level=logging.DEBUG)
+logging.getLogger('boto3').setLevel(logging.DEBUG)
+logging.getLogger('botocore').setLevel(logging.DEBUG)
 print(ENVIRONMENT_CONDITIONS)
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
