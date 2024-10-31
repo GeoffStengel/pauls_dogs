@@ -95,9 +95,9 @@ USE_TZ = True
 
 
 # Environment-based Static/Media File Handling
-ENVIRONMENT_CONDITIONS = os.environ.get('ENVIRONMENT_CONDITIONS', 'development')
+ENVIRONMENT_CONDITIONZ = os.environ.get('ENVIRONMENT_CONDITIONZ', 'development')
 
-if ENVIRONMENT_CONDITIONS == 'development':
+if ENVIRONMENT_CONDITIONZ == 'development':
     # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
@@ -114,7 +114,7 @@ if ENVIRONMENT_CONDITIONS == 'development':
         }
     }
     print('dohick')
-elif ENVIRONMENT_CONDITIONS == 'production':
+elif ENVIRONMENT_CONDITIONZ == 'production':
     # Use S3 in production
     DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
@@ -135,11 +135,12 @@ elif ENVIRONMENT_CONDITIONS == 'production':
     #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'pd_proj.storage.custom_storage.StaticStorage'
     DEFAULT_FILE_STORAGE = 'pd_proj.storage.custom_storage.MediaStorage'
-
+    MEDIA_ROOT = 'media/'
+    
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
-
+    print('hickleberrrrries')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
