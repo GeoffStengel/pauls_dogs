@@ -17,21 +17,31 @@ class SignupForm(UserCreationForm):
         model = User
         fields = ('username', 'email', 'password1', 'password2')
     
-    def __init__(self, *args, **kwargs):
-        super(SignupForm, self).__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({
-            'placeholder': 'Your username',
-            'class': 'w-full py-4 px-6 rounded-xl'
-        })
-        self.fields['email'].widget.attrs.update({
-            'placeholder': 'Your email address',
-            'class': 'w-full py-4 px-6 rounded-xl'
-        })
-        self.fields['password1'].widget.attrs.update({
-            'placeholder': 'Your password',
-            'class': 'w-full py-4 px-6 rounded-xl'
-        })
-        self.fields['password2'].widget.attrs.update({
-            'placeholder': 'Repeat password',
-            'class': 'w-full py-4 px-6 rounded-xl'
-        })
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Your username',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
+    email = forms.CharField(widget=forms.EmailInput(attrs={
+        'placeholder': 'Your email address',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+        'placeholder': 'Your password',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={
+        'placeholder': 'Repeat password',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
+
+
+
+
+
+
+
+
+
+
+
+        

@@ -1,4 +1,3 @@
-import logging
 import os
 from pathlib import Path
 import dj_database_url
@@ -9,14 +8,6 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#env_path = os.path.join(BASE_DIR, '.env')
-
-
-#load_dotenv(dotenv_path=env_path)
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -26,8 +17,6 @@ ADMIN_URL = os.environ.get('ADMIN')
 #We Added This For Your .env Files To Stay Secure
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 
 
 LOGIN_URL = '/login/'
@@ -113,7 +102,6 @@ if ENVIRONMENT_CONDITIONS == 'development':
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'core/static'),
-        
     ]
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
@@ -136,6 +124,7 @@ elif ENVIRONMENT_CONDITIONS == 'production':
     AWS_S3_FILE_OVERWRITE = False  # Prevent file overwrites
     AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', 'public-read')
     AWS_QUERYSTRING_AUTH = False   # Simplify URLs
+    AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
     # Set up static and media URLs for AWS S3
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
@@ -147,13 +136,6 @@ elif ENVIRONMENT_CONDITIONS == 'production':
     STATICFILES_STORAGE = 'pd_proj.storage.custom_storage.StaticStorage'
     DEFAULT_FILE_STORAGE = 'pd_proj.storage.custom_storage.MediaStorage'
 
-
-    # Additional settings (optional)
-    #AWS_S3_OBJECT_PARAMETERS = {
-    #    'CacheControl': 'max-age=86400',
-    #}
-
-
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
@@ -161,14 +143,6 @@ elif ENVIRONMENT_CONDITIONS == 'production':
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AWS Region setting
-AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
-
-
-logging.basicConfig(level=logging.DEBUG)
-logging.getLogger('boto3').setLevel(logging.DEBUG)
-logging.getLogger('botocore').setLevel(logging.DEBUG)
-print(ENVIRONMENT_CONDITIONS)
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
 
