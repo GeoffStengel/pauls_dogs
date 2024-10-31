@@ -127,7 +127,6 @@ if ENVIRONMENT_CONDITIONS == 'development':
     }
     print('dohick')
 elif ENVIRONMENT_CONDITIONS == 'production':
-    print("Running in production mode")
     # Use S3 in production
     DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
