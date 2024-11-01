@@ -134,10 +134,14 @@ elif ENVIRONMENT_CONDITIONZ == 'production':
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
-   
+elif ENVIRONMENT_CONDITIONZ == 'production':
+    print("Production settings are active")
     print('hickleberrrrries')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
 
 # Apply Django Heroku settings (if deploying on Heroku)
 django_heroku.settings(locals())
