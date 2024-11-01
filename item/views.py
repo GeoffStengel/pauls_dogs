@@ -32,7 +32,7 @@ def detail(request, pk):
         'item': item,
         'related_items': related_items
     })
-
+"""
 @login_required
 def new(request):
     if request.method == 'POST':
@@ -51,7 +51,30 @@ def new(request):
         'form': form,
         'title': 'New item',
     })
+"""
+def new(request):
+    if request.method == 'POST':
+        form = NewItemForm(request.POST, request.FILES)
 
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.created_by = request.user
+            item.save()
+
+            # Check if the image URL is correctly set
+            if item.image:
+                print(f"Image URL: {item.image.url}")
+            else:
+                print("No image found on the item instance.")
+
+            return redirect('item:detail', pk=item.id)
+    else:
+        form = NewItemForm()
+
+    return render(request, 'item/form.html', {
+        'form': form,
+        'title': 'New item',
+    })
 @login_required
 def edit(request, pk):
     item = get_object_or_404(Item, pk=pk, created_by=request.user)
