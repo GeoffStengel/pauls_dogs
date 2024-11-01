@@ -98,7 +98,6 @@ USE_TZ = True
 ENVIRONMENT_CONDITIONZ = os.environ.get('ENVIRONMENT_CONDITIONZ', 'development')
 
 if ENVIRONMENT_CONDITIONZ == 'development':
-    # Development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'core/static'),
@@ -126,20 +125,16 @@ elif ENVIRONMENT_CONDITIONZ == 'production':
     AWS_QUERYSTRING_AUTH = False   # Simplify URLs
     AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
 
-    # Set up static and media URLs for AWS S3
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
-    # AWS S3 storage for static and media files
-    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'pd_proj.storage.custom_storage.StaticStorage'
     DEFAULT_FILE_STORAGE = 'pd_proj.storage.custom_storage.MediaStorage'
-    MEDIA_ROOT = 'media/'
+
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
     
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
+   
     print('hickleberrrrries')
 # Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
