@@ -2,10 +2,12 @@
 
 {% block title %}
     <title>New Conversation</title>
-{% endblock title %}
+{% endblock title %} 
 
 {% block content %}
-<h1 class="mb-6 text text-3xl">New Conversation</h1>
+<h2 class="page_name_h2">New Conversation</h2>
+
+<div id="new_convo_wrapper">
 <form method="post" action=".">
     {% csrf_token %}
 
@@ -25,5 +27,5 @@
 
         <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Send</button>
 </form>
-
+</div>
 {% endblock content %}

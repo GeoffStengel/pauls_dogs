@@ -5,9 +5,10 @@
 {% endblock title %}
 
 {% block content %}
-<h1 class="mb-6 text text-3xl">Inbox</h1>
+<h2 class="page_name_h2">Inbox</h2>
 
-<div class="space-y-6">
+
+<div id="inbox_convo_wrapper">
     {% for conversation in conversations %}
         <a href="{% url 'conversation:detail' conversation.id %}">
             <div class="p-6 flex bg-gray-100 rounded-xl">
