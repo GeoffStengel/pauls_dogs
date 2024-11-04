@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'item',
     'dashboard',
     'conversation',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -93,10 +94,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-ENVIRONMENT_CONDITIONZ = os.environ.get('ENVIRONMENT_CONDITION', 'production')
 
 # Environment-based Static/Media File Handling
-"""
 ENVIRONMENT_CONDITIONZ = os.environ.get('ENVIRONMENT_CONDITIONZ', 'development')
 
 if ENVIRONMENT_CONDITIONZ == 'development':
@@ -116,53 +115,37 @@ if ENVIRONMENT_CONDITIONZ == 'development':
     }
     print('dohick')
 elif ENVIRONMENT_CONDITIONZ == 'production':
-    # Use S3 in production
-    #DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True' 
-    DEBUG = True
+    DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+    AWS_STORAGE_BUCKET_NAME = 'pd-aws-bucket'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_FILE_OVERWRITE = False  # Prevent file overwrites
-    AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', 'public-read')
-    #AWS_QUERYSTRING_AUTH = False   # Simplify URLs
-    AWS_REGION = os.environ.get('AWS_REGION', 'us-east-2')
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_S3_REGION_NAME = 'us-east-2'
 
+    # Set up static and media URLs for AWS S3
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
     
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    #NEW version of old STATICFILES_STORAGE & DEFAULT_FILE_STORAGE
+    STORAGES = {
+        #Media Files (images) managing
+        "default": {
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+        },
+        # CSS and JS Files
+        "staticfiles": {
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+        },
+    }
 
     DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL', f'sqlite:///{BASE_DIR}/db.sqlite3')
+        )
     }
-"""
-DEBUG = True
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'pd-aws-bucket'
-AWS_S3_REGION_NAME = 'us-east-2'
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    print('hickleberrrrries')
 
-# Use S3 for media files
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', f'sqlite:///{BASE_DIR}/db.sqlite3')
-    )
-}
-print('hickleberrrrries')
-print("AWS Access Key ID:", AWS_ACCESS_KEY_ID)
-print("AWS Secret Access Key:", AWS_SECRET_ACCESS_KEY)
-print("S3 Bucket Name:", AWS_STORAGE_BUCKET_NAME)
-print("S3 Custom Domain:", AWS_S3_CUSTOM_DOMAIN)    
-# Default Primary Key Field Type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
