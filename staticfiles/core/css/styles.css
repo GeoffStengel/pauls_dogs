@@ -203,7 +203,10 @@ main{
     background: var(--bg-secondary);
     color: var(--text-secondary);
 }
-
+.sidebar_donate path{
+    background-color: var(--accent-color);
+    
+}
 /*Text Next To Icons Sidebar*/
 .link-text{ 
     display: none;
@@ -267,6 +270,8 @@ main{
     font-size: 1.5rem; 
     line-height: 2rem;
     text-align: center;
+    justify-content: center;
+    color: var(--text-secondary);
 }
 
 .adoption_discount{
@@ -301,8 +306,6 @@ main{
 .login_btn{
     background-color: #0088a9;
 }
-
-
 
 /*NEW SECTION END*/
 /*******************/
@@ -618,14 +621,14 @@ footer {
 
 #individual_item_card_wrapper{
     display: flex;
-    width: 265px;
+    width: 270px;
     height: 380px;
     gap: 1rem;
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color:#fedb72dd ;
+    background-color:var(--bg-primary);
 }
 
 .solo_div_around_item_image{
@@ -815,6 +818,43 @@ footer {
 /*STATEMENT CONTAINER END*/
 /************************/
 
+/*CONTACT SECTION START*/
+/************************/
+#contact_page_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #f7fafc;
+    border-radius: 0.75rem;
+    margin-top: .5rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+#contact_page_wrapper h2 {
+    color: var(--bg-primary);
+}
+.contact_info_text{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+}
+#map{
+    background-color: var(--bg-primary);
+    padding: 20px;
+    border-radius: 15px;
+}
+/*CONTACT SECTION END*/
+/************************/
 
 /************************/
 /**Grid*Holding*Logo*Grid*& Sponsor Thank You Image Grid START*/
@@ -957,6 +997,66 @@ footer {
 
 /*Signup Form Page END*/
 /*******************/
+
+/****CONVERSATION*START****/
+/*******************/
+
+#new_convo_wrapper{
+    display: grid;
+    max-width: 420px;
+    max-height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin: 0 auto;
+    background-color: #55aeea;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+#inbox_convo_wrapper{
+    display: grid;
+    width: 80%;
+    max-height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin: auto;
+    background-color: #dc75e7;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+/*From the conversation/detail.html page*/
+#converstion_wrapper{
+    display: grid;
+    width: 80%;
+    max-height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin: auto;
+    background-color: var(--bkgd-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+#response_wrapper_in_convo{
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin: auto;
+    margin-top: 10px;
+    background-color: var(--accent-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+/*******************/
+/****CONVERSATION*END****/
+
+
 
 /*EDIT ITEM PAGE START*/
 /*******************/
@@ -1196,8 +1296,58 @@ img.logo {
   }
 
   @media only screen and (max-width: 625px) {
+/****CONVERSATION*START****/
+/*******************/
 
+#new_convo_wrapper{
+    display: grid;
+    max-width: 420px;
+    max-height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin: 0 auto;
+    background-color: #55aeea;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
 }
+
+#inbox_convo_wrapper{
+    display: grid;
+    width: 80%;
+    max-height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    margin: auto;
+    background-color: #dc75e7;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+/*From the conversation/detail.html page*/
+#converstion_wrapper{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+#response_wrapper_in_convo{
+    display: grid;
+    width: 100%;
+ 
+    gap: 10px;
+    margin: 5px auto;
+    margin-top: 10px;
+    padding: 1.5rem;
+}
+}
+/*******************/
+/****CONVERSATION*END****/
+
 
 /*Small Screens for bottom icon bar*/
 @media only screen and (max-width: 600px) {

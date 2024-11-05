@@ -27,7 +27,7 @@
         <!--Header Area Has NAV Top AD BANNER and btns -->
     <header>
         <a id="logo" href="{% url 'core:home-home' %}"><img src="{% static 'core/images/pd_logo_02.svg' %}" alt="Logo"> </a>
-    
+        
         <nav>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <div class="bar bar1"></div>
@@ -59,12 +59,10 @@
                     <li><a href="{% url 'core:login' %}" class="nav-buttons">Log in</a></li>
                 {% endif %}
                     <a class="donate_btn nav-buttons" href="{{ homepage.donation_button }}">Donate</a>
-            </ul>    
-           
-        </nav>
-        <!-- <a class="cta" href="#"><button>TACO</button></a> -->
+            </ul>        
+        </nav>  
     </header>
- 
+    
     <aside class="aside"> <!---navbar--->
         <ul id="sidebar"> <!---navbar-nav--->
             <li class="sidebar-logo">

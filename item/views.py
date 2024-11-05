@@ -75,6 +75,14 @@ def new(request):
         'form': form,
         'title': 'New item',
     })
+
+
+def category_detail(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    items = category.items.all()
+
+    return render(request, 'item/category_id.html', {'category': category, 'items': items})
+
 @login_required
 def edit(request, pk):
     item = get_object_or_404(Item, pk=pk, created_by=request.user)
