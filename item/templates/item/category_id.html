@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}<title>{{ category.name }}</title>  {% endblock title%}
+
+{% block content %}
+
+
+<h2>{{ category.name }}</h2>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.name }}</li>
+        {% endfor %}
+    </ul>
+
+    
+    <div id="main_wrapper_items_page">
+        <div class="frame_around_search_sidebar">
+        <div class="form_grid_and_formBtns">
+            <form method="get" action="{% url 'item:items' %}">
+                <input 
+                    name="query" 
+                    class="input_field_search" 
+                    type="text" 
+                    value="{{ query }}" 
+                    placeholder="Find a dog, a cat or bird..." aria-label="Search">
+                <button class="search_btn">Search</button>
+            </form>
+            <hr class="header_rows_section_breaks">
+            <p class="item_sidebar_section_name">Categories</p>
+            <ul>
+                {% for category in categories %}
+                    <li class="category_names_in_items_sidebar{% if category.id == category_id %} bg-gray-200{% endif %}">
+                        <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <hr class="header_rows_section_breaks">
+            <p class="item_sidebar_section_name">Clear filters</p>
+            <ul>
+                <li><a href="{% url 'item:items' %}" class="clear_btn">Clear</a>
+            </ul> 
+        </div>
+    </div>
+        <div class="grid_holding_item_cards">
+            {% for item in items %}
+                <div id="individual_item_card_wrapper">
+                    <a href="{% url 'item:detail' item.id %}">
+                        <div class="solo_div_around_item_image">
+                            <img src="{{ item.image.url }}" class="item_profile_img" alt="Item Image">
+                        </div>
+                        <div class="text_wrapper_item_thumbnail">
+                            <h2 class="text-2xl">{{ item.name }}</h2>
+                            <p class="text-gray-500">Price: {{ item.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>    
+
+{%  endblock content %}

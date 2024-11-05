@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.templatetags.static import static
 from django.conf import settings
 
+
 # Create your models here.
 class Category(models.Model):
     name= models.CharField(max_length=50)

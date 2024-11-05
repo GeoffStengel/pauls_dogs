@@ -1090,12 +1090,28 @@ footer {
 /*******************/
 
 /*******************/
+/*Privacy Page START*/
+#privacy_page_wrapper, #terms_of_use_page_wrapper{
+    display: grid;
+    max-width: 600px;
+    height: 100%;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background-color: white;
+    line-height: 32px;
+}
+
+/*Privacy Page END*/
+/*******************/
+
+/*******************/
 /*MEDIA QUERIES START*/
 /*******************/
 
 /**Bottom icon bar end*/
 /*******************/
-
 
 @keyframes appear{
     from{

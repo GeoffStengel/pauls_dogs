@@ -16,8 +16,8 @@
             {% endfor %}
     </section>
     <!--Shows How Many Items Have been Uploaded-->
-    <a href="{% url 'dashboard:index' %}" ><div class="how_many_items_currently_ticker">
-        Total Listings: {{ items.count }} 
+    <a href="{% url 'item:items' %}" ><div class="how_many_items_currently_ticker">
+        Total Listings: {{ items.item_count }} 
     </div></a>
 
     <section>

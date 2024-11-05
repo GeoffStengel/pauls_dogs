@@ -148,6 +148,11 @@ h1 {
     padding: 9px 15px;
     background: var(--accent-color);
 }
+
+.how_many_items_currently_ticker{
+    color: var(--text-primary);
+    font-size: 14px;
+}
 /*HEADER STYLING END*/
 /*******************/
 
@@ -271,7 +276,7 @@ main{
     line-height: 2rem;
     text-align: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: var(--bg-primary);
 }
 
 .adoption_discount{
@@ -339,6 +344,7 @@ main{
     box-shadow: var(--box-shadow-light); /* Soft shadow for depth */
     font-family: 'Montserrat', sans-serif; /* Font choice */
     padding: 10px;
+    align-items: center;
 }
 
 .home_description p {
