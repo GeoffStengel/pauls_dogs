@@ -15,10 +15,7 @@
                 <a class="adoption_discount" href="#">{{ item.sale_banner }}</a>
             {% endfor %}
     </section>
-    <!--Shows How Many Items Have been Uploaded-->
-    <a href="{% url 'item:items' %}" ><div class="how_many_items_currently_ticker">
-        Total Listings: {{ items.item_count }} 
-    </div></a>
+   
 
     <section>
     <!--Header-Image-Banner-Start-->
@@ -159,24 +156,31 @@
     <!---How-To-SPONSOR START-->
     <section>
         <div id="how_to_sponsor_container">
-        <div class="how_to_adopt_puppy_grid">
-            <div class="card card1">
-                <p>Choose a Dog:</p>
-                <p>to Sponsor:</p>
-                <p><span>🐾</span> <strong> Browse through</strong>  our available dogs and select one to virtually adopt.</p>
+            <div class="sponsor_statement_in_sponsor_sections">   
+                <h4 class="page_name_h4">How to Sponsor</h4>
+                <h4 class="page_name_h4">$1 A Day Could Save An Animals Life!</h4>
             </div>
-            <div class="card card2">    
-                <p>Monthly Sponsorship:</p>
-                <p>Commit to a monthly donation</p>
-                that directly supports the well-being of your chosen dog.
+            <div class="how_to_adopt_puppy_grid">
+                <div class="card card1">
+                    <div class="card_text">
+                        
+                        <p>Browse our available dogs & select one to virtually adopt.</p>
+                    </div>
+                </div>
+                <div class="card card2">
+                    <div class="card_text">    
+                        <p>Monthly Sponsorship:</p>
+                        <p>Commit to a monthly donation</p>
+                    </div>
+                </div>
+                <div class="card card3">
+                    <div class="card_text">    
+                        <p>Receive Updates:</p>
+                        <p>You’ll get regular updates,</p>
+                    </div>
+                </div> 
             </div>
-            <div class="card card3">    
-                <p>Receive Updates:</p>
-                <p>You’ll get regular updates,</p>
-                photos, and progress reports on how your sponsored dog is doing.
-            </div> 
         </div>
-    </div>
     </section>    
     <!---How-To-SPONSOR END--> 
     <!---STATEMENT CONTAINER START-->

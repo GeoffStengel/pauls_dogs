@@ -96,7 +96,6 @@ nav{
     display: flex;
     width: 100%;
     margin: 0 auto;
-   
     float: right;
     align-items: center;
     justify-content: right;
@@ -149,10 +148,6 @@ h1 {
     background: var(--accent-color);
 }
 
-.how_many_items_currently_ticker{
-    color: var(--text-primary);
-    font-size: 14px;
-}
 /*HEADER STYLING END*/
 /*******************/
 
@@ -652,7 +647,8 @@ footer {
     max-width: 1260px;
     height: 80vh;
     grid-template-columns: repeat(2, minmax(350px, auto));
-    gap: 1.5rem;
+    grid-template-rows: auto;
+    gap: 20px;
     justify-content: center;
     margin: 0 auto;
     background-color: rgb(208, 246, 246);
@@ -704,7 +700,7 @@ footer {
     max-width: 350px;
     height: 450px;
     padding: 1rem;
-    gap: 1.5rem;
+    gap: 10px;
     padding: 1.5rem; 
     background-color: #ffffff; 
     border-radius: 0.75rem;
@@ -723,8 +719,12 @@ footer {
 /**how_to_adopt_puppy_grid****START********/
 /***Grid At Bottom Of Page Above Footer Column Grid***/
 #how_to_sponsor_container{
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
     margin: 0 auto;
     border-radius: 0.75rem;
     padding: 2rem;
@@ -735,7 +735,7 @@ footer {
 
 .how_to_adopt_puppy_grid{
     display: grid;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     grid-template-columns: repeat(auto-fit, 300px);
     grid-template-rows: repeat(auto);
@@ -753,6 +753,21 @@ footer {
     background-color: var(--card-bkgd);
 }
 
+.sponsor_statement_in_sponsor_sections{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    justify-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
 
 .card {
     display: flex;
@@ -762,8 +777,14 @@ footer {
     color: white;
     border-radius: 20px;
     justify-content: center;
+    justify-content: flex-end;
 }
-
+.card_text {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 .card1{
     background-image: url(https://cdn.pixabay.com/photo/2024/06/15/11/05/ai-generated-8831464_640.jpg);
     background-size: cover;

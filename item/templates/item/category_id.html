@@ -7,14 +7,14 @@
 {% block content %}
 
 
-<h2>{{ category.name }}</h2>
-    <ul>
+
+    <!--<ul>
         {% for item in items %}
         <li>{{ item.name }}</li>
         {% endfor %}
-    </ul>
+    </ul>-->
 
-    
+
     <div id="main_wrapper_items_page">
         <div class="frame_around_search_sidebar">
         <div class="form_grid_and_formBtns">
@@ -45,6 +45,7 @@
             </ul> 
         </div>
     </div>
+    
         <div class="grid_holding_item_cards">
             {% for item in items %}
                 <div id="individual_item_card_wrapper">
