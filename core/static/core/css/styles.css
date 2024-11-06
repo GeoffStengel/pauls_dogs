@@ -203,10 +203,7 @@ main{
     background: var(--bg-secondary);
     color: var(--text-secondary);
 }
-.sidebar_donate path{
-    background-color: var(--accent-color);
-    
-}
+
 /*Text Next To Icons Sidebar*/
 .link-text{ 
     display: none;
@@ -489,7 +486,8 @@ footer {
     gap: 2rem;
     margin:0 auto;
     border-radius: 20px;
-    margin-left: 5%;
+    margin-left: 70px;
+    justify-items: center;
 }
 
 .frame_around_search_sidebar{
@@ -565,8 +563,7 @@ footer {
 .header_rows_section_breaks{
     padding: 5px;
 }
-
-.grid_holding_item_cards{
+.grid_holding_eight_item_cards{
     display: grid;
     height: auto;
     grid-template-columns: repeat(auto-fill, minmax(250px, auto));
@@ -577,7 +574,20 @@ footer {
     border-radius: 20px;
     justify-items: space-evenly;
     justify-content: center;
-    
+}
+
+.grid_holding_item_cards{
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-rows: repeat(auto-fill, minmax(380px, 385px));
+    gap: 50px;
+    padding: 1rem;
+    background-color: var( --bkgd-color);
+    border-radius: 20px;
+    justify-items: space-evenly;
+    justify-content: center;
 }
 
 .item_sidebar_section_name{
@@ -1145,7 +1155,6 @@ footer {
     }
 }
 @media screen and (max-width: 1224px){
-
 #logo{
     cursor: pointer;
     position: absolute; /* Position the logo absolutely */
@@ -1217,7 +1226,7 @@ img.logo {
 
 .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50px; 
     right: 0;
     background-color: var(--bg-primary);
@@ -1318,25 +1327,17 @@ img.logo {
 }
 }
 
-  @media only screen and (max-width: 665px) {
-
-    /**Browse Page*START**/
-.form_grid_and_formBtns{
-    display: none;
-}
+@media only screen and (max-width: 656px) {
 #main_wrapper_items_page{
-    display: grid;
     width: 100%;
-    height: auto;
-    padding: 1rem;
+    padding: 1.5rem;
     grid-template-columns: 1fr; 
-    grid-template-rows: auto;
     gap: 2rem;
     margin:0 auto;
+    margin-left: 0px;
+    justify-items: center;
 }
- /**Browse Page*END**/
-
-  }
+}
 
   @media only screen and (max-width: 625px) {
 /****CONVERSATION*START****/
@@ -1381,7 +1382,6 @@ img.logo {
 #response_wrapper_in_convo{
     display: grid;
     width: 100%;
- 
     gap: 10px;
     margin: 5px auto;
     margin-top: 10px;
@@ -1454,6 +1454,39 @@ img.logo {
 }
 /*Bottom icon bar end*/
 /*******************/
+@media only screen and (max-width: 575px) {
+.form_grid_and_formBtns, .frame_around_search_sidebar{
+    display: none;
+}
+}
+@media only screen and (max-width: 350px) {
+   
+.grid_holding_eight_item_cards{
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-template-rows: repeat(auto-fill, minmax(380px, 385px));
+    gap: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    justify-items: space-evenly;
+    justify-content: center;
+}  
+
+#main_wrapper_items_page{
+    width: 100%;
+    padding: 1rem;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    margin:0 auto;
+    margin-left: 0px;
+    justify-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+}
+
+
 
 /*MEDIA QUERIES END*/
 /*******************/

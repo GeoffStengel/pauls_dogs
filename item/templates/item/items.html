@@ -1,3 +1,4 @@
+<!--Items Page This is Where Browse Button Takes-->
 {% extends 'core/base.html' %}
 
 {% block title %}
@@ -7,34 +8,34 @@
 {% block content %}
     <div id="main_wrapper_items_page">
         <div class="frame_around_search_sidebar">
-        <div class="form_grid_and_formBtns">
-            <form method="get" action="{% url 'item:items' %}">
-                <input 
-                    name="query" 
-                    class="input_field_search" 
-                    type="text" 
-                    value="{{ query }}" 
-                    placeholder="Find a dog, a cat or bird..." aria-label="Search">
-                <button class="search_btn">Search</button>
-            </form>
-            <hr class="header_rows_section_breaks">
-            <p class="item_sidebar_section_name">Categories</p>
-            <ul>
-                {% for category in categories %}
-                    <li class="category_names_in_items_sidebar{% if category.id == category_id %} bg-gray-200{% endif %}">
-                        <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}">
-                            {{ category.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-            <hr class="header_rows_section_breaks">
-            <p class="item_sidebar_section_name">Clear filters</p>
-            <ul>
-                <li><a href="{% url 'item:items' %}" class="clear_btn">Clear</a>
-            </ul> 
+            <div class="form_grid_and_formBtns">
+                <form method="get" action="{% url 'item:items' %}">
+                    <input 
+                        name="query" 
+                        class="input_field_search" 
+                        type="text" 
+                        value="{{ query }}" 
+                        placeholder="Find a dog, a cat or bird..." aria-label="Search">
+                    <button class="search_btn">Search</button>
+                </form>
+                <hr class="header_rows_section_breaks">
+                <p class="item_sidebar_section_name">Categories</p>
+                <ul>
+                    {% for category in categories %}
+                        <li class="category_names_in_items_sidebar{% if category.id == category_id %} bg-gray-200{% endif %}">
+                            <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}">
+                                {{ category.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <hr class="header_rows_section_breaks">
+                <p class="item_sidebar_section_name">Clear filters</p>
+                <ul>
+                    <li><a href="{% url 'item:items' %}" class="clear_btn">Clear</a>
+                </ul> 
+            </div>
         </div>
-    </div>
         <div class="grid_holding_item_cards">
             {% for item in items %}
                 <div id="individual_item_card_wrapper">
