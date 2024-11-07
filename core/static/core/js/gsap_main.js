@@ -19,15 +19,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: 'bounce'
     });
 
-    gsap.to(".box", {
-        rotation: 360,
-        duration: 2,
-        scrollTrigger: {
-            trigger: ".box",
-            toggleActions: "restart pause reverse pause"
-        }
-    });
-
     
     const puppy_grid_6_img = document.getElementsByClassName('puppy_grid_6_img');
 

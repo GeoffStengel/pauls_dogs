@@ -26,7 +26,7 @@
 
         <!--Header Area Has NAV Top AD BANNER and btns -->
     <header>
-        <a id="logo" href="{% url 'core:home-home' %}"><img src="{% static 'core/images/pd_logo_02.svg' %}" alt="Logo"> </a>
+        <a id="logo" href="{% url 'core:home-home' %}"><img src="{% static 'core/images/pd_logo_02.svg' %}" alt="Logo"></a>
         
         <nav>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -39,14 +39,8 @@
                 <li><a class="nav-buttons" href="/#about">About</a></li>
                 <li><a class="nav-buttons" href="/#pets">Pets</a></li>
                 <li><a class="nav-buttons" href="/#contact">Contact</a></li>
-               <!-- <li><a class="nav-buttons" href="{{ homepage.donation_button }}">Donate</a></li> -->
                 <li><a class="nav-buttons" href="{% url 'item:items' %}">Browse</a></li>
                 <li><a class="nav-buttons" href="{% url 'item:new' %}">New item</a></li>
-            
-            <!--Test-->
-               <!-- <a href="{% url 'item:new' %}" class="authorized_profile_btns">New item</a> 
-                <a href="{% url 'item:items' %}" class="authorized_profile_btns">Browse</a >-->
-    
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'conversation:inbox' %}" class="nav-buttons">Inbox</a></li>
                     <li><a href="{% url 'dashboard:index' %}" class="nav-buttons">Dashboard</a></li>
@@ -62,7 +56,6 @@
             </ul>        
         </nav>  
     </header>
-    
     <aside class="aside"> <!---navbar--->
         <ul id="sidebar"> <!---navbar-nav--->
             <li class="sidebar-logo">
@@ -73,13 +66,12 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
+                <a class="sidebar-link" href="{% url 'core:home-home' %}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                     </svg>
                     <span class="link-text">Home</span>
                 </a>
             </li>
-        
             <li class="sidebar-item">
                 <a class="sidebar-link" href="/#about">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><path d="M0 0h24v24H0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
@@ -87,7 +79,6 @@
                     <span class="link-text">About</span>
                 </a>
             </li>
-
             <li class="sidebar-item">
                 <a class="sidebar-link" href="/#pets">
                 <svg 
@@ -102,7 +93,6 @@
                 <span class="link-text">Pets</span>
             </a>
         </li>
-
         <li class="sidebar-item">
             <a class="sidebar-link" href="/#contact">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><rect fill="none" height="24" width="24"/><path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M12,10c1.1,0,2,0.9,2,2c0,1.1-0.9,2-2,2s-2-0.9-2-2 C10,10.9,10.9,10,12,10z M16,18H8v-0.57c0-0.81,0.48-1.53,1.22-1.85C10.07,15.21,11.01,15,12,15c0.99,0,1.93,0.21,2.78,0.58 C15.52,15.9,16,16.62,16,17.43V18z"/>
@@ -110,7 +100,6 @@
                 <span class="link-text">Contact</span>
             </a>
         </li> 
-        
         <li class="sidebar-item">
             <a class="sidebar-link" href="{{ homepage.donation_button }}">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><g><rect fill="none" height="24" width="24"/></g><g><g><rect height="11" width="4" x="1" y="11"/><path d="M16,3.25C16.65,2.49,17.66,2,18.7,2C20.55,2,22,3.45,22,5.3c0,2.27-2.91,4.9-6,7.7c-3.09-2.81-6-5.44-6-7.7 C10,3.45,11.45,2,13.3,2C14.34,2,15.35,2.49,16,3.25z"/><path d="M20,17h-7l-2.09-0.73l0.33-0.94L13,16h2.82c0.65,0,1.18-0.53,1.18-1.18v0c0-0.49-0.31-0.93-0.77-1.11L8.97,11H7v9.02 L14,22l8.01-3v0C22,17.9,21.11,17,20,17z"/></g></g>
@@ -120,19 +109,17 @@
         </li>
     </ul>
 </aside>
-
-
  <div id="base_contentblock_wrapper"> 
     {% block content %}
     
     {% endblock %}
 </div> 
-
     <footer>
         <div class="footer_grid">
             <a href="{% url 'core:home-home' %}">Home</a>
             <a href="/#pets">Pets</a>
             <a href="/#about">About</a>
+            <a href="{% url 'item:items' %}">Browse</a>
             <a href="{{ homepage.donation_button }}" class="donate_button_footer">Donate</a>
             <a href="/#contact">Contact</a>
             <a href="{% url 'core:home-terms' %}">Terms of use</a>
@@ -140,7 +127,6 @@
         </div>
     </footer>
 </div>
-
     <!---->
     <!--JS Script Tags START-->
     <!--Holds Smaller Sales Banner At Top-->
@@ -155,10 +141,5 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
     <!---->
     <!--Holds JS Script Tags End-->
-
-
-
-
-
 </body>
 </html> 
