@@ -382,7 +382,7 @@ main{
 }
 .category_wrapper{
     display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-row: 1fr;
     gap: 0.75rem;
     justify-content: center ;
@@ -1347,6 +1347,24 @@ img.logo {
     }
 }
 
+
+@media only screen and (max-width: 800px) {
+.item_img_desc_title_grid{
+    display: grid;
+    max-width: 1260px;
+    height: 100%;
+    grid-template-columns: repeat(1, minmax(320px, auto));
+    grid-template-rows: 350px;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: rgb(208, 246, 246);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+}
 
 @media only screen and (max-width: 767px) {
 .sponsor_statement_in_sponsor_sections{
