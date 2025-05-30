@@ -165,7 +165,7 @@ JAZZMIN_SETTINGS = {
 
     "topmenu_links": [
         {"app": "core"},
-        {"name": "Home", "url": "https://pauls-dogs-be568d40599e.herokuapp.com/", "new_window": True},
+        {"name": "Home", "url": "https://paulsdogs-f1b5116d1567.herokuapp.com/", "new_window": True},
     ],
     "show_ui_builder": False,
     "custom_css": "core/css/custom.css",

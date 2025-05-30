@@ -18,14 +18,16 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 
 ✅  4: You Can Either Make New Proj There Or Can Transfer You The Info That Exists
 
-✅  5: In Heroku Go To Settings & Link The Github Repo You Just Forked
+✅  5: In the Heroku Dashboard, go to the app > Access tab > Add collaborator
 
-✅  6: Make AWS Account At aws.amazon.com
+✅  6: In Heroku Go To Settings & Link The Github Repo You Just Forked
 
-✅  7: In AWS Create An IAM User
+✅  7: Make AWS Account At aws.amazon.com
 
-✅  8: Also Helpful Hint Mark or Add Star/Favorite on IAM page & S3 page In AWS.
+✅  8: In AWS Create An IAM User
 
-✅  9: Add Permissions For That IAM User In The IAM Section
+✅  9: Also Helpful Hint Mark or Add Star/Favorite on IAM page & S3 page In AWS.
 
-✅  10: In AWS S3 Section Add Policy & Permissions
+✅  10: Add Permissions For That IAM User In The IAM Section
+
+✅  11: In AWS S3 Section Add Policy & Permissions
