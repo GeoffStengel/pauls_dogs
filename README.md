@@ -3,7 +3,7 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 
 ⭐PLEASE READ BELOW FOR INSTRUCTIONS⭐
 
-👉🏽 Watch Site Live While Working: https://pauls-dogs-be568d40599e.herokuapp.com/ or paulsdogs.com
+👉🏽 Watch Site Live While Working: https://paulsdogs-f1b5116d1567.herokuapp.com or paulsdogs.com
     "It changes sometimes am renting a single server so i switch projects if u notice that"
 
 💡 Steps On How To Get Around Folders Will Update
