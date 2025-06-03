@@ -98,6 +98,7 @@ USE_TZ = True
 # Environment-based Static/Media File Handling
 ENVIRONMENT_CONDITIONZ = os.environ.get('ENVIRONMENT_CONDITIONZ', 'development')
 
+
 if ENVIRONMENT_CONDITIONZ == 'development':
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
@@ -116,16 +117,34 @@ if ENVIRONMENT_CONDITIONZ == 'development':
     print('dohick')
 elif ENVIRONMENT_CONDITIONZ == 'production':
     DEBUG = os.environ.get('DEBUG_PRODUCTION', 'False') == 'True'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')  
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = 'pd-aws-bucket'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_FILE_OVERWRITE = False
-    AWS_S3_REGION_NAME = 'us-east-2'
 
-    # Set up static and media URLs for AWS S3
+    # DigitalOcean Spaces (S3-compatible) config
+    DO_SPACES_KEY = os.environ.get('DO_SPACES_KEY')  
+    DO_SPACES_SECRET = os.environ.get('DO_SPACES_SECRET')
+    DO_SPACES_BUCKET_NAME = os.environ.get('DO_SPACES_BUCKET_NAME')
+    DO_SPACES_REGION = os.environ.get('DO_SPACES_REGION', 'nyc3')
+    DO_SPACES_ENDPOINT_URL = f'https://{DO_SPACES_REGION}.digitaloceanspaces.com'
+    DO_SPACES_CUSTOM_DOMAIN = f'{DO_SPACES_BUCKET_NAME}.{DO_SPACES_REGION}.cdn.digitaloceanspaces.com'
+
+    # Set boto3-compatible variables for DigitalOcean Spaces
+    AWS_ACCESS_KEY_ID = DO_SPACES_KEY
+    AWS_SECRET_ACCESS_KEY = DO_SPACES_SECRET
+    AWS_STORAGE_BUCKET_NAME = DO_SPACES_BUCKET_NAME
+    AWS_S3_REGION_NAME = DO_SPACES_REGION
+    AWS_S3_ENDPOINT_URL = DO_SPACES_ENDPOINT_URL
+    AWS_S3_CUSTOM_DOMAIN = DO_SPACES_CUSTOM_DOMAIN
+
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    
+    # Static and media file URLs
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+
+    # Set up static and media URLs for AWS S3
+    #STATIC_URL = f'https://{DO_SPACES_CUSTOM_DOMAIN}/static/'
+    #MEDIA_URL = f'https://{DO_SPACES_CUSTOM_DOMAIN}/media/'
     
     #NEW version of old STATICFILES_STORAGE & DEFAULT_FILE_STORAGE
     STORAGES = {
