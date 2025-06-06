@@ -5,3 +5,6 @@ venv
 .vscode
 .pyc
 __pycache__
+set_env.sh
+db.sqlite3
+
