@@ -43,9 +43,10 @@ elif ENVIRONMENT_CONDITIONZ == 'production':
     AWS_S3_ENDPOINT_URL = DO_SPACES_ENDPOINT_URL
     AWS_S3_CUSTOM_DOMAIN = DO_SPACES_CUSTOM_DOMAIN
     AWS_S3_FILE_OVERWRITE = False
-    AWS_DEFAULT_ACL = ''
+    AWS_DEFAULT_ACL = 'public-read'
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    STATIC_ROOT = BASE_DIR / 'staticfiles'  # Add this
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
     STORAGES = {
         'default': {'BACKEND': 'storages.backends.s3boto3.S3Boto3Storage'},
