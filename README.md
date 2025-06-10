@@ -65,3 +65,7 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 💡 22: Heroku Make Sure YOUR Github Is What Ya See In Settings As Step ✅6: Suggests
 
 💡 23: Heroku Settings Is Pointed to Original Repo For Development ONLY - Choose Yours Where Ya See Original When Ya Have Domain
+
+💡 24: Read This Blog For Extra Tips On Setting Up Godaddy Domain & Github https://geoffstengel.com/blogs/website_info.html
+
+🔥 24: Tip Taco 🌮  geoffstengel.com
