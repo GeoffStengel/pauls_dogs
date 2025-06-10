@@ -16,33 +16,41 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 
 ✅ 3: Make Heroku Account At heroku.com
 
-✅ 4: You Can Either Make New Proj There Or Can Transfer You The Info That Exists
+✅ 4: In Heroku Make New Proj & Give It A Name
 
-✅ 5: In the Heroku Dashboard, go to the app > Access tab > Add collaborator
+✅ 5: In Heroku Dashboard, go to the app > Access tab > Add collaborator
 
-✅ 6: In Heroku Go To Settings & Link The Github Repo You Just Forked
+✅ 6: In Heroku Go To Settings & Link The Github Repo You Forked (When Your Domain Is Ready)
 
-✅ 7: Make AWS Account At aws.amazon.com
+✅ 7: Create Postgres (It Will Ask For Payment 💰)
 
-✅ 8: In AWS Create An IAM User
+✅ 8: Heroku In The Project Go To Settings Add Custom Domain
 
-✅ 9: Also Helpful Hint Mark or Add Star/Favorite on IAM page & S3 page In AWS.
+🚀 IF TAKING THE AWS ROUTE THESE ARE THE STEPS - IF DIGITALOCEAN ROUTE SKIP TO THOSE STEPS
 
-✅ 10: Add Permissions For That IAM User In The IAM Section
+✅ 9: Make AWS Account At aws.amazon.com
 
-✅ 11: In AWS S3 Section Add Policy & Permissions
+✅ 10: In AWS Create An IAM User
 
-⭐ 12: Steps For DigitalOcean If You Chose That Route Instead Of AWS
+✅ 11: Also Helpful Hint Mark or Add Star/Favorite on IAM page & S3 page In AWS.
 
-⭐ 13: Signup For Account At digitalocean.com
+✅ 12: Add Permissions For That IAM User In The IAM Section
 
-⭐ 14: Go To Spaces Object Storage
+✅ 13: In AWS S3 Section Add Policy & Permissions
 
-⭐ 15: Create Bucket
+🚀 
 
-⭐ 16: Add Collaborator For Bucket (They Only Have Access To The Bucket)
+🌊 14: Steps For DigitalOcean If You Chose That Route Instead Of AWS
 
-⭐ 17: Create Access Keys (Be Ready They Only Show Private Keys Once When Creating)
+🌊 15: Signup For Account At digitalocean.com
+
+🌊 16: Go To Spaces Object Storage
+
+🌊 17: Create Bucket
+
+🌊 18: Add Collaborator For Bucket (They Only Have Access To The Bucket)
+
+🌊 19: Create Access Keys (Be Ready They Only Show Private Keys Once When Creating)
 
     🛎️Helpful Links For Setting Up Domain & Adding Images & Files👇 
 
@@ -54,18 +62,18 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 
 🛎️ 👬🏽 Domain Important - at Section 5 You'll Need These Numbers in Godaddy Manage DNS: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain 🛎️
 
-✅ 18: Lets Do a Recap Making Sure You Have All Steps In Place.
+✅ 20: Lets Do a Recap Making Sure You Have All Steps In Place.
 
-💡 19: So Now Your Storage Is With Either AWS S3 or DigitalOcean (Depending On Which You Chose)
+💡 21: So Now Your Storage Is With Either AWS S3 or DigitalOcean (Depending On Which You Chose)
 
-💡 20: Heroku Is Your Host (heroku.com)
+💡 22: Heroku Is Your Host (heroku.com)
 
-💡 21: Godaddy Holds YOUR Domain & That Should Be Pointing To YOUR Github Repo
+💡 23: Godaddy Holds YOUR Domain & That Should Be Pointing To Heroku
 
-💡 22: Heroku Make Sure YOUR Github Is What Ya See In Settings As Step ✅6: Suggests
+💡 24: Heroku Make Sure YOUR Github Is What Ya See In Settings As Step ✅6: Suggests
 
-💡 23: Heroku Settings Is Pointed to Original Repo For Development ONLY - Choose Yours Where Ya See Original When Ya Have Domain
+💡 25: Heroku Settings Is Pointed to Original Repo For Development ONLY - Choose Yours Where Ya See Original When Ya Have Domain
 
-💡 24: Read This Blog For Extra Tips On Setting Up Godaddy Domain & Github https://geoffstengel.com/blogs/website_info.html
+💡 26: Read This Blog For Extra Tips On Setting Up Godaddy Domain & Github https://geoffstengel.com/blogs/website_info.html
 
-🔥 24: Tip Taco 🌮  geoffstengel.com
+🔥 27: Tip Taco 🌮  geoffstengel.com
