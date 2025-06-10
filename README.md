@@ -24,7 +24,7 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 
 ✅ 7: Create Postgres (It Will Ask For Payment 💰)
 
-✅ 8: Heroku In The Project Go To Settings Add Custom Domain
+✅ 8: Heroku In Your Project Go To Settings Add Custom Domain (🎥 Helpful Vid: https://youtu.be/4hikWqrSmFA?si=zvGv9Jc2lGHp3qP1)
 
 🚀 IF TAKING THE AWS ROUTE THESE ARE THE STEPS - IF DIGITALOCEAN ROUTE SKIP TO THOSE STEPS
 
