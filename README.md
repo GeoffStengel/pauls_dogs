@@ -31,3 +31,23 @@ Pauls Dogs - A Website For Rescue Pups To Find Forever Homes
 ✅  10: Add Permissions For That IAM User In The IAM Section
 
 ✅  11: In AWS S3 Section Add Policy & Permissions
+
+⭐  12: Steps For DigitalOcean If You Chose That Route Instead Of AWS
+
+⭐  13: Signup For Account At digitalocean.com
+
+⭐  14: Go To Spaces Object Storage
+
+⭐  15: Create Bucket
+
+⭐  16: Create Access Keys (Be Ready They Only Show Private Keys Once When Creating)
+
+🛎️Helpful Links For Setting Up Domain & Adding Images & Files👇 
+
+🎥 Github Basics: https://youtu.be/iv8rSLsi1xo & https://youtu.be/v_1iqtOnUMg
+
+📷 Github How To Upload Images .58 Seconds Long: https://www.youtube.com/watch?v=ATVm6ACERu8 
+
+💻 DNS Point Godaddy Domain to Github Pages Tutorial: https://youtu.be/dbgEWWBvIxY
+
+🛎️ 👬🏽 Domain Important - at Section 5 You'll Need These Numbers in Godaddy Manage DNS: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain 🛎️
